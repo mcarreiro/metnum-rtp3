@@ -12,9 +12,10 @@
 \contentsline {subsection}{\numberline {4.2}Colores}{8}
 \contentsline {subsection}{\numberline {4.3}Imagen 9 - Avi\IeC {\'o}n}{12}
 \contentsline {subsection}{\numberline {4.4}Imagen 12}{15}
-\contentsline {section}{\numberline {5}Conclusiones}{17}
-\contentsline {subsection}{\numberline {5.1}Comparaci\IeC {\'o}n de tiempos}{17}
-\contentsline {subsection}{\numberline {5.2}Comparaci\IeC {\'o}n de calidad}{18}
+\contentsline {subsection}{\numberline {4.5}Calidad subjetiva}{17}
+\contentsline {section}{\numberline {5}Conclusiones}{18}
+\contentsline {subsection}{\numberline {5.1}Comparaci\IeC {\'o}n de tiempos}{18}
+\contentsline {subsection}{\numberline {5.2}Comparaci\IeC {\'o}n de calidad}{19}
 \contentsline {subsection}{\numberline {5.3}Algoritmos}{19}
-\contentsline {subsection}{\numberline {5.4}Bordes}{19}
-\contentsline {subsection}{\numberline {5.5}Otro uso}{19}
+\contentsline {subsection}{\numberline {5.4}Bordes}{20}
+\contentsline {subsection}{\numberline {5.5}Otro uso}{20}
