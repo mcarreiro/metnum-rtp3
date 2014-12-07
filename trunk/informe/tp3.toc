@@ -1,0 +1,20 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Resumen}{2}
+\contentsline {section}{\numberline {2}Introducci\'on te\'orica}{3}
+\contentsline {section}{\numberline {3}Desarrollo}{4}
+\contentsline {subsection}{\numberline {3.1}Vecinos}{4}
+\contentsline {subsection}{\numberline {3.2}Bilineal}{4}
+\contentsline {subsection}{\numberline {3.3}Direccional}{5}
+\contentsline {subsubsection}{\numberline {3.3.1}Splines Cubicos}{6}
+\contentsline {subsection}{\numberline {3.4}High Quality}{6}
+\contentsline {section}{\numberline {4}Experimentaci\IeC {\'o}n Y Resultados}{8}
+\contentsline {subsection}{\numberline {4.1}PNSR}{8}
+\contentsline {subsection}{\numberline {4.2}Colores}{8}
+\contentsline {subsection}{\numberline {4.3}Imagen 9 - Avi\IeC {\'o}n}{12}
+\contentsline {subsection}{\numberline {4.4}Imagen 12}{15}
+\contentsline {section}{\numberline {5}Conclusiones}{17}
+\contentsline {subsection}{\numberline {5.1}Comparaci\IeC {\'o}n de tiempos}{17}
+\contentsline {subsection}{\numberline {5.2}Comparaci\IeC {\'o}n de calidad}{18}
+\contentsline {subsection}{\numberline {5.3}Algoritmos}{19}
+\contentsline {subsection}{\numberline {5.4}Bordes}{19}
+\contentsline {subsection}{\numberline {5.5}Otro uso}{19}
