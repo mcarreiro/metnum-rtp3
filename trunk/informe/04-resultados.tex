@@ -10,57 +10,18 @@ Es un método para definir la relación entre una señal y el ruido de la regena
 
 Se nos ocurrió que podría ser interesante chequear los comportamientos de estos procedimientos en una imagen con muchos bordes ya que estos, en algoritmos como el directional, son factores importantes y potencialmente conflictivos. Además hicimos que la imagen sea grande (5000 x 3000 pixeles) para poder analizar tiempos de computo y para influir en la calidad subjetiva, ya que si ponemos imágenes con mucha definición pequeños errores podrían pasar desapercividos para el ojo humano.
 
-Tambien expondremos la imagen bayerizada para que quede claro que la conversción que estamos haciendo es correcta.
-
 \begin{figure}
 
-\minipage{0.5\textwidth}
 \begin{center}
-       \includegraphics[scale=0.04]{imagenes/colores.png}
+       \includegraphics[scale=0.03]{imagenes/colores.png}
        \caption{Original }\label{fig:awesome_image1}
         \end{center}
-\endminipage\hfill
-\minipage{0.5\textwidth}
-\begin{center}
-        \includegraphics[scale=0.04]{imagenes/colores_bayer.png}
-       \caption{Bayerizada}\label{fig:awesome_image1}
-        \end{center}
-\endminipage\hfill 
-\end{figure}
-\newpage
-\begin{figure}[!htb]
-\minipage{0.5\textwidth}
-\begin{center}
-    \includegraphics[scale=0.04]{imagenes/colores_demosicing_bilineal.png}
-    \caption{Bilineal }
- \end{center}
-\endminipage
-\minipage{0.5\textwidth}
-\begin{center}
-    \includegraphics[scale=0.04]{imagenes/colores_demosicing_quality.png}
-    \caption{High Quality}
-        \end{center}
-\endminipage\hfill
+
 \end{figure}
 
-\begin{figure}
-\minipage{0.5\textwidth}
-\begin{center}
-    \includegraphics[scale=0.04]{imagenes/colores_demosicing_spline.png}
-    \caption{Directional}
-        \end{center}
-\endminipage
-\minipage{0.5\textwidth}
-\begin{center}
-    \includegraphics[scale=0.04]{imagenes/colores_demosicing_vecino.png}
-    \caption{Vecinos}
- \end{center}
-\endminipage
- 
-\end{figure}
 \newpage
 
-Efectivamente a primera vista parecería que todas dieran lo mismo. Pero veamos que si le hacemos zoom, no es así.
+Los resultados obtenidos a primera vista parecían todos iguales. Pero al hacerles zoom, pudimos ver que no era así.
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
 \begin{center}
@@ -92,7 +53,7 @@ Efectivamente a primera vista parecería que todas dieran lo mismo. Pero veamos 
 \end{figure}
 
 
-El algoritmo bilineal y el high quality tuvieron pequeños errores en los bordes. Podemos observar que en esos casos entre el verde y el violeta parece haber como una `cosedura', la misma se repite en todos los bordes de la imagen. Estas diferencias imperceptibles por el tamaño de la imagen a primera vista pueden ser efectivamente comprobadas mediante un análisis de calidad objetivo. 
+El algoritmo bilineal y el high quality tuvieron pequeños errores en los bordes. Podemos observar que en esos casos entre el verde y el violeta parece haber como una `cosedura' (\textit{zipper artifact}), la misma se repite en todos los bordes de la imagen. Estas diferencias imperceptibles por el tamaño de la imagen a primera vista pueden ser efectivamente comprobadas mediante un análisis de calidad objetivo. 
 
 A continuación podemos ver los PSNR obtenidos al comparar los distintos resultados con la imagen original. Las im{ágenes que al hacerles zoom tenían esas $"$coseduras$"$ efectivamente fueron las que mas bajo PSNR dieron, es decir las que mas difirieron de la real.
 
@@ -102,7 +63,7 @@ $$
        highquality    &   39.67   \\
        bilineal    &      41.14   \\
        directional    &      48.13    \\
-       vecinos   &      048.13      \\
+       vecinos   &      48.13      \\
 \end{bmatrix} 
 $$
 
@@ -118,11 +79,51 @@ $$
 \end{bmatrix} 
 $$
 
-Como era de esperarse, las proporc1iones tiempo tienen sentido. Vecinos es el mas rápido ya que es el procedimiento mas simple y quality tarda mas que bilineal ya que antes aplica bilineal para luego mejorarlo (aunque en este caso no lo mejora). Para este caso tanto por calidad objetiva, subjetiva como en tiempo de cómputo vecinos parecería ser el mejor.
+Como era de esperarse, las proporciones de tiempo tienen sentido. Vecinos es el mas rápido ya que es el procedimiento mas simple y quality tarda mas que bilineal ya que antes aplica bilineal para luego mejorarlo (aunque en este caso no lo mejora). Para este caso tanto por calidad objetiva, subjetiva como en tiempo de cómputo vecinos parecería ser el mejor.
 
 
-\newpage
+\clearpage
+\subsection{Tablero de colores}
+Dado que en la prueba anterior tuvimos un resultado muy fuerte (que el PSNR de vecinos dió mejor que el de HighQuality). Decidimos hacer otra prueba más con este mismo formato para poder investigar un poco más que pasó.
+La imagen que tomamos fué la siguiente, que es parecida a la anterior en el sentido de que tiene muchos colores con límites bien drásticos,es decir que no hay cambios graduales de color sino que cambian de un pixel a otro. 
+\begin{figure}[!htb]
+\begin{center}
+       \includegraphics[scale=0.2]{imagenes/cuadrados_colores.png}
+       \caption{Tablero de colores}
+        \end{center}
 
+\end{figure}
+
+Podemos observar que además la imagen tiene una marca de agua. Decidimos utilizarla igual porque nos va a terminar siendo útil también en nuestras pruebas.Esta imagen también es mas chica ya que ahora no nos interesa tanto el tiempo de cómputo\\
+Los resultados obtenidos tuvieron visibles diferencias a la imagen original. Las marcas de agua cambiaron de color (\textit{false color artifact}) en todos los casos y,a diferencia de la prueba anterior, el resultado de vecinos tuvo claros errores en los bordes mientras que los otros a simple vista parecería que no. No exponemos estos resultados para no sobre cargar de imágenes el informe pero dejamos adjunta la imagen original por si se desea corroborar esto haciendo uno mismo los tests.\\
+\subsubsection{Calidad cuantificable}
+Yendo a la parte que más nos interesaba, la calidad cuantificable. Podemos observar que ahora si tuvo un comportamiento mas intuitivo.
+
+$$ 
+\begin{bmatrix}
+           &      PSNR     \\
+       highquality    &   38.58   \\
+       bilineal    &      36.08  \\
+       directional    &      34.90    \\
+       vecinos   &      32.00      \\
+\end{bmatrix} 
+$$
+
+Efectivamente la mejor esta vez fué el highquality y el peor vecinos.
+\subsubsection{Tiempos}
+A continuación veremos cual fué el tiempo que tomó cada algoritmo.
+
+$$ 
+\begin{bmatrix}
+           &      Tiempo (segundos)     \\
+       highquality    &   4.21   \\
+       bilineal    &      4.14   \\
+       directional    &      4.05    \\
+       vecinos   &      0.15      \\
+\end{bmatrix} 
+$$
+
+\clearpage
 \subsection{Imagen 9 - Avión}
 
 Nos pareció interesante hacer un análisis particular de la Imagen 9 ya que posee varias características en donde se pueden observar diferentes condiciones para ver como actúan los cuatro algoritmos, estos son: tener gran cantidad de sectores bordes, gran variedad de colores que contrastan altamente y principalmente tener texto. Destacamos esto último ya que una de las cualidades más importantes que deben poseer estos algoritmos es la de asegurar nitidez y suavidad, detalles que se ven al procesar imágenes que poseen texto. \\
