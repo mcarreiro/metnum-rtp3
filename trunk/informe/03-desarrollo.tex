@@ -2,30 +2,53 @@
 
 Como explicamos en la introducción estaremos analizando 4 algoritmos distintos, estos son: Vecinos, Bilineal, Direccional y High Quality. En lineas generales anticiparemos que los primeros dos se utilizan para rearmar toda la imagen desde la bayerización. El resto serán utilizados para aproximar mejor el valor del verde original en los píxeles que en la bayerizción solo habían atrapado rojo y azul. Esto es porque el verde es el color que más ve el ser humano y mientras mejor esté la imagen en ese color, subjetivamente quedará mejor.\\
 La idea será comparar sus resultados subjetivamente, es decir a simple vista como 
-vemos la imagen resultante, objetivamente y temporalmente, osea cuanto tiempo demora en ejecutarse el procedimiento, para poder concluir finalmente las ventajas y desventajas de cada uno. A continuación explicaremos como 
-implementamos cada uno.\\
+vemos la imagen resultante, objetivamente y temporalmente, cuanto tiempo demora en ejecutarse el procedimiento, para poder concluir finalmente las ventajas y desventajas de cada uno. A continuación explicaremos como 
+implementamos cada uno.
 
 
 \subsection{Vecinos}
 Este es el más simple de todos. La idea es estabelecer el valor de los colores faltantes de cada pixel en base al vecino que tenga dicho valor. Por ejemplo si estamos en un pixel azul le preguntamos a algun vecino rojo y 
 otro verde su valor y los seteamos en los correspondientes colores de nuestro pixel.
 
-Pseudocódigo:
-\begin{lstlisting}[frame=single] 
-Para cada celda:
-	si es roja:
-		celda.verde = vecinoIzq.verde
-		celda.azul  = vecinoSuperiorIzq.azul	
-	si es azul:
-		celda.rojo = vecinoInferiorDerecho.rojo
-		celda.verde = vecinoDerecho.verde
-	si es verde y fila par:
-		celda.rojo = vecinoDerecho.rojo
-		celda.azul = vecinoSuperior.azul
-	si es verde y fila impar
-		celda.rojo = vecinoInferior.rojo
-		celda.azul = vecinoIzquierdo.azul
-\end{lstlisting}
+\begin{algorithm}
+\caption{vecinos($imagenBayerizada$)}\label{euclid}
+\begin{algorithmic}[1]
+\For{$cada\ celda\ en\ imagenBayerizada$}
+  \If{$celda\ es\ roja$} \Comment{Fila y columna impar}
+      \State $\textit{celda.verde = vecinoIzq.verde;}$
+      \State $\textit{celda.azul  = vecinoSuperiorIzq.azul;}$
+  \EndIf
+  \If{$celda\ es\ azul$} \Comment{Fila y columna par}
+      \State $\textit{celda.rojo = vecinoInferiorDerecho.rojo;}$
+      \State $\textit{celda.verde = vecinoDerecho.verde;}$
+  \EndIf
+  \If{$celda\ es\ verde \And fila par $}
+      \State $\textit{celda.rojo = vecinoDerecho.rojo;}$ 
+      \State $\textit{celda.azul = vecinoSuperior.azul;}$ 
+  \EndIf
+  \If{$celda\ es\ verde \And fila impar $}
+      \State $\textit{celda.rojo = vecinoInferior.rojo;}$ 
+      \State $\textit{celda.azul = vecinoIzquierdo.azul;}$ 
+  \EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+% \begin{lstlisting}[frame=single] 
+% Para cada celda:
+	% si es roja:
+		% celda.verde = vecinoIzq.verde
+		% celda.azul  = vecinoSuperiorIzq.azul	
+	% si es azul:
+		% celda.rojo = vecinoInferiorDerecho.rojo
+		% celda.verde = vecinoDerecho.verde
+	% si es verde y fila par:
+		% celda.rojo = vecinoDerecho.rojo
+		% celda.azul = vecinoSuperior.azul
+	% si es verde y fila impar
+		% celda.rojo = vecinoInferior.rojo
+		% celda.azul = vecinoIzquierdo.azul
+% \end{lstlisting}
 
 Se diferencia entre fila par e impar cuando la celda es verde ya que es distinta la disposición de sus vecinos en cada caso, esto en cambio se mantiene inmutable en los casos de celda roja o azul. La selección del
 vecino izquierdo y superior izquierdo cuando es roja es porque siempre existe ese vecino, a diferencia del derecho por ejemplo ya que el rojo puede ser una celda borde y no tener dicho adyacente. La misma idea aplicamos 
@@ -33,99 +56,184 @@ al caso de la celda azul y de las verdes, apuntamos a elegir el vecino que siemp
 
 \subsection{Bilineal}
 
-La interpolación es una forma de aproximar valores desconocidos en algún punto a partir de valores que sí conocemos, sabiendo de antemano que van a tener un cierto grado de error. Esto se puede trasladar a nuestro problema, ya que tenemos que aproximar valores para un color de pixel a partir de valores cercanos conocidos, con la unica diferencia que en vez de ser en una dimensión como si fuese una funcion, esta será en dos dimensiones, de ahí el nombre de $'bilineal'$. Esta interpolación en 2 dimensiones se realiza a partir de los 4 puntos mas cercanos del color del pixel que queremos aproximar. Para calcular el valor de dicho punto primero se saca el promedio de los valores en dirección horizontal, luego en dirección vertical y por último el promedio de dichos valores. Cabe aclarar que dependiendo el color de pixel actual y el color que se quiera aproximar, podemos llegar a tener información de solo 2 puntos cercanos, pero alineados en la misma dirección, con lo que solo se calculará la aproximación en esa dirección.
-\begin{verbatim}
-Para todos los pixeles de la imágen:
-  Si estoy parado en un pixel azul:
-    Calculo el valor de rojo que tendrá el pixel 
-    haciendo el promedio de los valores en rojo de los 
-    4 puntos oblicuos a este (que estén en rango).
+La interpolación es una forma de aproximar valores desconocidos en algún punto a partir de valores que sí conocemos, sabiendo de antemano que van a tener un cierto grado de error. Esto se puede trasladar a nuestro problema, ya que tenemos que aproximar valores para un color de pixel a partir de valores cercanos conocidos, con la única diferencia que en vez de ser en una dimensión como si fuese una funcion, esta será en dos dimensiones, de ahí el nombre de $'bilineal'$. Esta interpolación en 2 dimensiones se realiza a partir de los 4 puntos más cercanos del color del pixel que queremos aproximar. Para calcular el valor de dicho punto primero se saca el promedio de los valores en dirección horizontal, luego en dirección vertical y por último el promedio de dichos valores. Cabe aclarar que dependiendo el color de pixel actual y el color que se quiera aproximar, podemos llegar a tener información de solo 2 puntos cercanos, pero alineados en la misma dirección, con lo que solo se calculará la aproximación en esa dirección.
+
+
+\begin{algorithm}
+\caption{bilineal($imagenBayerizada$)}\label{euclid}
+\begin{algorithmic}[1]
+\For{$cada\ celda\ en\ imagenBayerizada$}
+  \If{$celda\ es\ roja$} \Comment{Fila y columna impar}
+      \State $\textit{celda.azul = funcionLineal(puntosOblicuosALaCelda,imagenBayerizada,AZUL);}$
+      \State $\textit{celda.verde = funcionLineal(puntosAdyacentesALaCelda,imagenBayerizada,VERDE);}$
+  \EndIf
+  \If{$celda\ es\ azul$} \Comment{Fila y columna par}
+      \State $\textit{celda.rojo = funcionLineal(puntosOblicuosALaCelda,imagenBayerizada,ROJO);}$
+      \State $\textit{celda.verde = funcionLineal(puntosAdyacentesALaCelda,imagenBayerizada,VERDE);}$
+  \EndIf
+  \If{$celda\ es\ verde \And fila par $}
+      \State $\textit{celda.rojo = funcionLineal(puntosSuperiorEInferior,imagenBayerizada,ROJO);}$ 
+      \State $\textit{celda.azul = funcionLineal(puntosDerechaEIzquierda,imagenBayerizada,AZUL);}$ 
+  \EndIf
+  \If{$celda\ es\ verde \And fila impar $}
+      \State $\textit{celda.azul = funcionLineal(puntosSuperiorEInferior,imagenBayerizada,AZUL);}$ 
+      \State $\textit{celda.rojo = funcionLineal(puntosDerechaEIzquierda,imagenBayerizada,ROJO);}$ 
+  \EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{funcionLineal($puntos,imagenBayerizada,color$)}\label{euclid}
+\begin{algorithmic}[1]
+\State $\textit{resultado $=$ 0;}$
+\State $\textit{cantPuntos $=$ 0;}$
+\For{$cada\ punto\ en\ puntos$}
+  \If{$punto\ enRango$}
+      \State $\textit{resultado $+=$ punto.color}$
+      \State $\textit{cantPuntos $+=$ 1}$
+  \EndIf
+\EndFor
+\Return $resultado/cantPuntos$
+\end{algorithmic}
+\end{algorithm}
+
+% \begin{verbatim}
+% Para todos los pixeles de la imágen:
+%   Si estoy parado en un pixel azul:
+%     Calculo el valor de rojo que tendrá el pixel 
+%     haciendo el promedio de los valores en rojo de los 
+%     4 puntos oblicuos a este (que estén en rango).
     
-    Calculo el valor de verde que tendrá el pixel 
-    haciendo el promedio de los valores en verde de los 
+%     Calculo el valor de verde que tendrá el pixel 
+%     haciendo el promedio de los valores en verde de los 
 
-    4 puntos adyacentes a este (que estén en rango).
-  Si estoy parado en un pixel rojo:
-    Calculo el valor de azul que tendrá el pixel 
-    haciendo el promedio de los valores en azul de los 
-    4 puntos oblicuos a este (que estén en rango).
+%     4 puntos adyacentes a este (que estén en rango).
+%   Si estoy parado en un pixel rojo:
+%     Calculo el valor de azul que tendrá el pixel 
+%     haciendo el promedio de los valores en azul de los 
+%     4 puntos oblicuos a este (que estén en rango).
     
-    Calculo el valor de verde que tendrá el pixel 
-    haciendo el promedio de los valores en verde de los 
-    4 puntos adyacentes a este (que estén en rango).
+%     Calculo el valor de verde que tendrá el pixel 
+%     haciendo el promedio de los valores en verde de los 
+%     4 puntos adyacentes a este (que estén en rango).
 
-  Si estoy parado en un pixel verde:
-    Si estoy parado en una fila de azules:
-      Calculo el valor de rojo que tendrá el pixel 
-      haciendo el promedio de los valores en rojo de los 
-      2 puntos superiores e inferiores (que estén en rango).
+%   Si estoy parado en un pixel verde:
+%     Si estoy parado en una fila de azules:
+%       Calculo el valor de rojo que tendrá el pixel 
+%       haciendo el promedio de los valores en rojo de los 
+%       2 puntos superiores e inferiores (que estén en rango).
 
-      Calculo el valor de azul que tendrá el pixel 
-      haciendo el promedio de los valores en azul de los 
-      2 puntos a derecha e izquierda (que estén en rango).
+%       Calculo el valor de azul que tendrá el pixel 
+%       haciendo el promedio de los valores en azul de los 
+%       2 puntos a derecha e izquierda (que estén en rango).
 
-    Si estoy parado en una fila de rojos:
-      Calculo el valor de azul que tendrá el pixel 
-      haciendo el promedio de los valores en azul de los 
-      2 puntos superiores e inferiores (que estén en rango).
+%     Si estoy parado en una fila de rojos:
+%       Calculo el valor de azul que tendrá el pixel 
+%       haciendo el promedio de los valores en azul de los 
+%       2 puntos superiores e inferiores (que estén en rango).
 
-      Calculo el valor de rojo que tendrá el pixel 
-      haciendo el promedio de los valores en rojo de los 
-      2 puntos a derecha e izquierda (que estén en rango).  
-\end{verbatim}
+%       Calculo el valor de rojo que tendrá el pixel 
+%       haciendo el promedio de los valores en rojo de los 
+%       2 puntos a derecha e izquierda (que estén en rango).  
+% \end{verbatim}
 
-
-
+\newpage
 \subsection{Direccional}
 
-Para este algoritmo nos basamos en lo explicado por Burden y Faires$[1]$ para el caculo de los splines y en lo desarrollado por Ron Kimmel$[2]$ para el algoritmo en sí. El método lo aplicamos sólo para el color verde mientras que para los otros utilizamos bilineal. 
+Para este algoritmo nos basamos en lo explicado por Burden y Faires$[1]$ para el cálculo de los splines y en lo desarrollado por Ron Kimmel$[2]$ para el algoritmo en sí. El método lo aplicamos sólo para el color verde mientras que para los otros utilizamos bilineal. 
 
-
-
-Lo que hace es:
-\begin{verbatim}
-Para cada celda:
-  Interpolo mediante spline su fila y columna
-  Calculo sus derivadas aproximadas en direcci\'on horizontal y vertical
-  Si la derivada horizontal es mayor:
-    celda.verde = interpolacion horizontal * 0.3 + interpolacion vertical * 0.7
-  sino
-    celda.verde = interpolacion horizontal * 0.3 + interpolacion vertical * 0.7
-\end{verbatim}
+\begin{algorithm}
+\caption{direccional($imagenBayerizada$)}\label{euclid}
+\begin{algorithmic}[1]
+\State $\textit{hacerBilineal(imagenBayerizada)}$
+\State $\textit{coeficientes $=$ new Matrix([0,0])}$ \Comment De la tupla el primero representa el coeficiente horizonal, el otro el vertical
+\For{$cada\ fila\ en\ imagenBayerizada.menosPrimerayUltima$}
+  \State $resolverPorSpline(horizontal,fila)$ \Comment Llenará la matriz de coeficientes
+\EndFor
+\For{$cada\ columna\ en\ imagenBayerizada.menosPrimerayUltima$}
+  \State $resolverPorSpline(vertical,columna)$ \Comment Llenará la matriz de coeficientes
+\EndFor
+\For{$cada\ celda\ en\ imagenBayerizada.menosElBorde$}
+  \If{$celda\ es\ verde$}
+      \State $derivadaX,derivadaY = calcularDerivadasDireccionales(celda)$
+      \If{$derivadaX > derivadaY$}      
+        \State \textit{$celda.verde = 0.3 * coeficientes.celda.horizontal + 0.7 * coeficientes.celda.vertical;$}
+      \Else
+        \State \textit{$celda.verde = 0.7 * coeficientes.celda.horizontal + 0.3 * coeficientes.celda.vertical;$}
+      \EndIf
+  \EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+% Lo que hace es:
+% \begin{verbatim}
+% Para cada celda:
+%   Interpolo mediante spline su fila y columna
+%   Calculo sus derivadas aproximadas en direcci\'on horizontal y vertical
+%   Si la derivada horizontal es mayor:
+%     celda.verde = interpolacion horizontal * 0.3 + interpolacion vertical * 0.7
+%   sino
+%     celda.verde = interpolacion horizontal * 0.3 + interpolacion vertical * 0.7
+% \end{verbatim}
 
 Dado que las interpolaciones mediante splines no son nada triviales lo explicaremos mas adelante en detalle. Las derivadas en $x$  la aproximamos haciendo $|G(x-1,y)-G(x+1,y)|$ donde G es el valor del color verde en ese punto, la derivada en $y$ es análoga. Dado que un mayor valor en la derivada puede estar indicándonos un potencial borde le damos mayor peso a la derivada cuyo valor es más chico multiplicando a este por 0.7 y a la otra por 0.3. Finalmente las sumamos para obtener el verde correspondiente en nuestra celda.
 
 \subsubsection{Splines Cubicos}
-Los Splines son funciones partidas que dadas n particiones disjuntas del dominio geneneran n funciones para cada subconjunto interpolando todos los puntos en el medio. Para nuestro caso, cada subconjunto estará dado por cada pixel que en la bayerización contenía solo verde adjunto a un pixel rojo y azul para cada dirección, vertical y horizontal. Es decir, en la dirección horizontal, el verde de la izquierda, y el de la derecha ; para vertical, el de arriba y el de abajo. 
+Los Splines son funciones partidas que dadas n particiones disjuntas del dominio geneneran n funciones para cada subconjunto interpolando todos los puntos en el medio. Para nuestro caso, cada subconjunto estará dado por cada pixel que en la bayerización contenía solo verde adjunto a un pixel rojo y azul para cada dirección, vertical y horizontal. Es decir, en la dirección horizontal, el verde de la izquierda, y el de la derecha ; para vertical, el de arriba y el de abajo. La función resolverPorSpline mantendrá en cada posición representando cada celda, los resultados de la siguiente función para cada dirección.
 Una vez que tenemos cada una de esas funciones que tendrán la forma
 
-$f_j(x) = d_j(x-x_j)^3 + c_j(x-x_j)^2 + b_j(x-x_j) + a_j \forall$ $x_j <= x < x_{j+k}$, en nuestro caso $k = 2$ \\
+$f_j(x) = d_j(x-x_j)^3 + c_j(x-x_j)^2 + b_j(x-x_j) + a_j\ \forall$ $x_j \leq x < x_{j+k}$,\ en nuestro caso $k = 2$ \\
 
 Solo queda calcular el valor del verde en el pixel rojo o azul.
 Es fácil notar que $(x-x_j) = 1$, por lo que para cada función el resultado va a ser $d_j+c_j+b_j+a_j$, siendo $a_j$ = el verde original en ese pixel.\\
 Solo queda triangular y obtener cada una de las $b_j$ ,$c_j$ y $d_j$.
 
-
 \subsection{High Quality}
 
-Todos los algoritmos anteriores aproximaban el valor mediante un color, pero esto no era suficiente para darle la suficiente definición ya que muchas veces los colores tienen un brillo o luminicencia que impacta en los tres pero que no se distingue cuando para el calculo del mismo se usan valores cercanos de ese , por lo tanto el algoritmo de demosaicing que denominamos "High Quality" y se basa en el paper de Malvar, He y Cutler, propone realzar cada color para darle una mejor definición utilizando los colores restantes. Por lo tanto se podria decir que este algoritmo no es un algoritmo para aproximar colores faltantes, sino que se utiliza a partir de una aproximación ya obtenida anteriormente para darle una mejor calidad a la misma.
+Todos los algoritmos anteriores aproximaban el valor mediante un color, pero esto no era suficiente para darle la suficiente definición ya que muchas veces los colores tienen un brillo o luminicencia que impacta en los tres pero que no se distingue cuando para el calculo del mismo se usan valores cercanos de ese , por lo tanto el algoritmo de demosaicing que denominamos $"$High Quality$"
+$ y se basa en el paper de Malvar, He y Cutler, propone realzar cada color para darle una mejor definición utilizando los colores restantes. Por lo tanto se podria decir que este algoritmo no es un algoritmo para aproximar colores faltantes, sino que se utiliza a partir de una aproximación ya obtenida anteriormente para darle una mejor calidad a la misma.
 
-Como la imagen Bayerizada se compone del doble de pixeles verdes que el resto, este resulta ser el color más importante para encontrar la interpolación correcta. Por lo tanto, y como figura en el enunciado del TP, decidimos inclinarlos por solo analizar dicho color, y en consecuencia solo realizando el calculado apropiado para el mismo.
+Como la imagen Bayerizada se compone del doble de pixeles verdes que el resto, este resulta ser el color más importante para encontrar la interpolación correcta. Por lo tanto, y como figura en el enunciado del TP, decidimos inclinarlos por solo analizar dicho color, y en consecuencia solo realizando el cálculo apropiado para el mismo.
 
 Antes de comenzar con el algoritmo, queremos hacer una observación de implementación
-Cuando comenzamos las pruebas del algoritmo de Quality notamos que en zonas oscuras aparecían pixeles con verde mucho mayor a 255 y nuestro primer parche plancharlo en 255. Obviamente esto generó pixeles verde claro en zonas indebidas (mayormente oscuras), e intentamos plancharlo en cero en comparación con el nivel de azul y rojo de ese mismo pixel. Pero produjo que en otras zonas se oscurecieran cuando no debían.\\
+Cuando comenzamos las pruebas del algoritmo de Quality notamos que en zonas oscuras aparecían pixeles con verde mucho mayor a 255 y nuestro primer intento fue fijarlo en 255. Obviamente esto generó pixeles verde claro en zonas indebidas (mayormente oscuras), e intentamos fijarlo en cero en comparación con el nivel de azul y rojo de ese mismo pixel. Pero produjo que en otras zonas se oscurecieran cuando no debían.\\
 Este caso no estaba contemplado en el paper, y pudimos observar cual era el problema. Quality aproxima el valor del verde dado el promedio de sus vecinos rojos o azules para dar luminicencia, el problema es que si el valor actual del verde era muy chico comparado con estos rojos y azules mencionados, al hacer la cuenta, el valor quedaba negativo, y en el producto quedaba mucho más grande que 255, y al hacer la acotación dicha en el primer párrafo era que nos quedaban los verdes saturados.\\
 La solución a dicho problema fue de antemano chequear que la resta, no me convierta un número negativo, en caso de ser así, planchar en cero. De esta manera no arruinamos ni zonas oscuras, ni zonas claras.
 
-\begin{lstlisting}[frame=single] 
-Primero hacemos bilineal sobre todos los colores de la imagen
-Por cada pixel de la imagen (exceptuando los bordes):
-  Si la imagen cae en verde la ignoro 
-  Si cae en rojo o azul:
-    Al color verde de ese pixel le sumo el valor del color actual calculado en la bilineal
-    Sumo los valores del color actual que se encuantran a 2 pixeles de distancia 
-    Obtengo el valor del color actual en esta posicion y le resto la suma anterior dividido 4
-    A esta ultima suma la multiplico por un alfa = 0.5 y el resultado se lo sumo al valor del color verde que tengo en esta posicion
-\end{lstlisting}
+\begin{algorithm}
+\caption{direccional($imagenBayerizada$)}\label{euclid}
+\begin{algorithmic}[1]
+\State $\textit{hacerBilineal(imagenBayerizada)}$
+\State $\textit{coeficientes $=$ new Matrix([0,0])}$ \Comment De la tupla el primero representa el coeficiente horizonal, el otro el vertical
+\For{$cada\ fila\ en\ imagenBayerizada.menosPrimerayUltima$}
+  \State $resolverPorSpline(horizontal,fila)$ \Comment Llenará la matriz de coeficientes
+\EndFor
+\For{$cada\ columna\ en\ imagenBayerizada.menosPrimerayUltima$}
+  \State $resolverPorSpline(vertical,columna)$ \Comment Llenará la matriz de coeficientes
+\EndFor
+\For{$cada\ celda\ en\ imagenBayerizada$}
+  \If{$celda\ es\ verde$}
+      \State $derivadaX,derivadaY = calcularDerivadasDireccionales(celda)$
+      \If{$derivadaX > derivadaY$}      
+        \State \textit{$celda.verde = 0.3 * coeficientes.celda.horizontal + 0.7 * coeficientes.celda.vertical;$}
+      \Else
+        \State \textit{$celda.verde = 0.7 * coeficientes.celda.horizontal + 0.3 * coeficientes.celda.vertical;$}
+      \EndIf
+  \EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+% \begin{lstlisting}[frame=single] 
+% Primero hacemos bilineal sobre todos los colores de la imagen
+% Por cada pixel de la imagen (exceptuando los bordes):
+%   Si la imagen cae en verde la ignoro 
+%   Si cae en rojo o azul:
+%     Al color verde de ese pixel le sumo el valor del color actual calculado en la bilineal
+%     Sumo los valores del color actual que se encuantran a 2 pixeles de distancia 
+%     Obtengo el valor del color actual en esta posicion y le resto la suma anterior dividido 4
+%     A esta ultima suma la multiplico por un alfa = 0.5 y el resultado se lo sumo al valor del color verde que tengo en esta posicion
+% \end{lstlisting}
 
 El alfa en 0.5 es un valor que aporta el paper para refinar la calidad y mejorar la aproximación.
