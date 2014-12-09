@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.30)  9 DEC 2014 02:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.30)  9 DEC 2014 02:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -966,44 +966,40 @@ File: imagenes/img5_zippering.png Graphic file (type png)
 <use imagenes/img5_zippering.png>
 Package pdftex.def Info: imagenes/img5_zippering.png used on input line 292.
 (pdftex.def)             Requested size: 128.0374pt x 210.89847pt.
-
-<imagenes/img3_blur_original.png, id=107, 250.9375pt x 247.92625pt>
+ [19 <./imagenes/img8_moire_original.png> <./imagenes/img8_moire.png> <./imagen
+es/img5_zippering_original.png> <./imagenes/img5_zippering.png>]
+<imagenes/img3_blur_original.png, id=115, 250.9375pt x 247.92625pt>
 File: imagenes/img3_blur_original.png Graphic file (type png)
 
 <use imagenes/img3_blur_original.png>
-Package pdftex.def Info: imagenes/img3_blur_original.png used on input line 303
+Package pdftex.def Info: imagenes/img3_blur_original.png used on input line 304
 .
 (pdftex.def)             Requested size: 128.0374pt x 126.50502pt.
 
-<imagenes/img3_blur.png, id=108, 242.9075pt x 238.8925pt>
+<imagenes/img3_blur.png, id=116, 242.9075pt x 238.8925pt>
 File: imagenes/img3_blur.png Graphic file (type png)
 
 <use imagenes/img3_blur.png>
-Package pdftex.def Info: imagenes/img3_blur.png used on input line 309.
+Package pdftex.def Info: imagenes/img3_blur.png used on input line 310.
 (pdftex.def)             Requested size: 128.0374pt x 125.91983pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagenes/img5_ringing_original.png, id=109, 210.7875pt x 187.70125pt>
+<imagenes/img5_ringing_original.png, id=117, 210.7875pt x 187.70125pt>
 File: imagenes/img5_ringing_original.png Graphic file (type png)
 
 <use imagenes/img5_ringing_original.png>
 Package pdftex.def Info: imagenes/img5_ringing_original.png used on input line 
-321.
+322.
 (pdftex.def)             Requested size: 128.0374pt x 114.01642pt.
 
-<imagenes/img5_ringing.png, id=110, 171.64125pt x 144.54pt>
+<imagenes/img5_ringing.png, id=118, 171.64125pt x 144.54pt>
 File: imagenes/img5_ringing.png Graphic file (type png)
 
 <use imagenes/img5_ringing.png>
-Package pdftex.def Info: imagenes/img5_ringing.png used on input line 327.
+Package pdftex.def Info: imagenes/img5_ringing.png used on input line 328.
 (pdftex.def)             Requested size: 128.0374pt x 107.82025pt.
- [19 <./imagenes/img8_moire_original.png> <./imagenes/img8_moire.png> <./imagen
-es/img5_zippering_original.png> <./imagenes/img5_zippering.png>]) [20 <./imagen
-es/img3_blur_original.png> <./imagenes/img3_blur.png> <./imagenes/img5_ringing_
-original.png> <./imagenes/img5_ringing.png>]
-(./05-discusion.tex) [21] (./06-conclusiones.tex
+) [20 <./imagenes/img3_blur_original.png> <./imagenes/img3_blur.png> <./imagene
+s/img5_ringing_original.png> <./imagenes/img5_ringing.png>] (./05-discusion.tex
+) [21] (./06-conclusiones.tex
 <imagenes/tiempo_algoritmos_random.png, id=129, 848.9316pt x 595.9866pt>
 File: imagenes/tiempo_algoritmos_random.png Graphic file (type png)
 
@@ -1063,7 +1059,7 @@ fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on tp3.pdf (24 pages, 11719745 bytes).
+Output written on tp3.pdf (24 pages, 11724675 bytes).
 PDF statistics:
  190 PDF objects out of 1000 (max. 8388607)
  100 compressed objects within 1 object stream
