@@ -206,13 +206,16 @@ La solución a dicho problema fue de antemano chequear que la resta, no me convi
 \begin{algorithmic}[1]
 \State $\textit{hacerBilineal(imagenBayerizada)}$
 \For{$cada\ celda\ en\ imagenBayerizada.menosElBorde$}
-  \If{$celda\ no\ es\ verde$}
-      \State $derivadaX,derivadaY = calcularDerivadasDireccionales(celda)$
-      \If{$derivadaX > derivadaY$}      
-        \State \textit{$celda.verde = 0.3 * coeficientes.celda.horizontal + 0.7 * coeficientes.celda.vertical;$}
-      \Else
-        \State \textit{$celda.verde = 0.7 * coeficientes.celda.horizontal + 0.3 * coeficientes.celda.vertical;$}
-      \EndIf
+  \If{$celda\ no\ es\ verde$} 	
+      	\Comment colorActual es rojo o verde
+ \State \Comment Sumo los valores del color actual que se encuentran a 2 pixeles de distancia 
+	 \State $gradiente = imagenBayerizada.dosArriba().colorActual$ 
+	\State $gradiente\ +=\ imagenBayerizada.dosAbajo().colorActual$
+	\State $gradiente\ +=\ imagenBayerizada.dosDerecha().colorActual$
+	\State $gradiente\ +=\ imagenBayerizada.dosIzquierda().colorActual$
+\State $correccion = (celda.colorActual - gradiente/4)$ \Comment Obtengo el valor del color actual en esta posicion y le resto la suma anterior dividido 4
+\State $celda.verde\ =\ 0.5 * correccion$ \Comment  A esta ultima suma la multiplico por un alfa = 0.5 y el resultado se lo sumo al valor del color verde que tengo en esta posicion
+      
   \EndIf
 \EndFor
 \end{algorithmic}
@@ -228,6 +231,7 @@ La solución a dicho problema fue de antemano chequear que la resta, no me convi
 %     Obtengo el valor del color actual en esta posicion y le resto la suma anterior dividido 4
 %     A esta ultima suma la multiplico por un alfa = 0.5 y el resultado se lo sumo al valor del color verde que tengo en esta posicion
 % \end{lstlisting}
+
 
 El alfa en 0.5 es un valor que aporta el paper para refinar la calidad y mejorar la aproximación.
 \clearpage
@@ -258,3 +262,15 @@ Los parámetros que se le deben pasar son:
 \end{enumerate}
 
 Imprime por pantalla el PSNR resultante.
+
+\subsubsection{image\_random.py}
+
+Este script genera una imagen aleatoria de ancho y alto deseado.\\
+Los parámetros que se le deben pasar son:\\
+\begin{enumerate}
+\item ancho: ancho en pixeles. 
+\item alto: alto en pixeles.
+\item output: ruta de salida de la imagen random.
+\end{enumerate}
+
+
