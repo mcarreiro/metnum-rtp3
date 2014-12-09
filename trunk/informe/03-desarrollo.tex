@@ -230,3 +230,31 @@ La solución a dicho problema fue de antemano chequear que la resta, no me convi
 % \end{lstlisting}
 
 El alfa en 0.5 es un valor que aporta el paper para refinar la calidad y mejorar la aproximación.
+\clearpage
+\subsection{Herramientas desarrolladas}
+
+Para este trabajo desarrollamos herramientas en python. Una para calcular el error objetivo cometido y otra para correr los scripts en C++. A continuación explicaremos brevemente cada una.
+
+\subsubsection{Image.py}
+
+Este script se encarga de crear la imagen bayerizada, crear los txt para pasarle a los programas en c++, compilar dichos programas y crear las imágenes resultantes en base a los txt generados por los programas c++.
+
+Recibe 2 parámetros:
+\begin{enumerate}
+\item nombre imagen: debe ser el nombre de la imagen sin su extensi\'on y la misma debe ubicarse en la carpeta 'images' que debe estar a la misma altura que 'src'. La imagen debe estar en formato bmp.
+\item algoritmo: debe ser el nombre del algoritmo a ejectuar. Las opciones son: 'vecino','quality','bilineal' o 'directional'.
+\end{enumerate}
+
+Las imágenes resultantes son guardadas en la misma carpeta donde esta este script.
+
+\subsubsection{green\_psnr.py}
+
+Este archivo realiza el cálculo de PSNR entre los colores verdes de todos los píxeles (excepto los bordes) de dos imágenes distintas, las cuales deben pasarse por parámetro.
+
+Los parámetros que se le deben pasar son:
+\begin{enumerate}
+\item imagen 1: ruta de la imagen con el nombre de la imagen y su extensi\'on. 
+\item imagen 2: ruta de la imagen con el nombre de la imagen y su extensi\'on.
+\end{enumerate}
+
+Imprime por pantalla el PSNR resultante.
