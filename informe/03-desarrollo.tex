@@ -202,7 +202,7 @@ Este caso no estaba contemplado en el paper, y pudimos observar cual era el prob
 La solución a dicho problema fue de antemano chequear que la resta, no me convierta un número negativo, en caso de ser así, planchar en cero. De esta manera no arruinamos ni zonas oscuras, ni zonas claras.
 
 \begin{algorithm}
-\caption{direccional($imagenBayerizada$)}\label{euclid}
+\caption{highQuality($imagenBayerizada$)}\label{euclid}
 \begin{algorithmic}[1]
 \State $\textit{hacerBilineal(imagenBayerizada)}$
 \State $\textit{coeficientes $=$ new Matrix([0,0])}$ \Comment De la tupla el primero representa el coeficiente horizonal, el otro el vertical
