@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.30)  9 DEC 2014 01:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.30)  9 DEC 2014 02:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -548,9 +548,6 @@ LaTeX Info: Redefining \% on input line 6.
 
 LaTeX Warning: Label `fig:awesome_image1' multiply defined.
 
-
-LaTeX Warning: Label `fig:awesome_image1' multiply defined.
-
 )
 \openout1 = `tp3.aux'.
 
@@ -707,18 +704,35 @@ Overfull \hbox (25.60904pt too wide) in paragraph at lines 94--94
 dc.jpg> <./logo_uba.jpg>] (./tp3.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+ [2])
 \tf@toc=\write3
 \openout3 = `tp3.toc'.
 
- (./01-resumen.tex) [2]
+ (./01-resumen.tex)
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.60925pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3] (./02-introduccion.tex) [4] (./03-desarrollo.tex
+[3] (./02-introduccion.tex <imagenes/img9.png, id=23, 770.88pt x 513.92pt>
+File: imagenes/img9.png Graphic file (type png)
+
+<use imagenes/img9.png>
+Package pdftex.def Info: imagenes/img9.png used on input line 18.
+(pdftex.def)             Requested size: 256.0748pt x 170.71548pt.
+ <imagenes/img9_bayer.png, id=24, 578.16pt x 385.44pt>
+File: imagenes/img9_bayer.png Graphic file (type png)
+
+<use imagenes/img9_bayer.png>
+Package pdftex.def Info: imagenes/img9_bayer.png used on input line 20.
+(pdftex.def)             Requested size: 256.0748pt x 170.71158pt.
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 18--22
+[][]  []
+ []
+
+) [4 <./imagenes/img9.png> <./imagenes/img9_bayer.png>] (./03-desarrollo.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--7
 
  []
@@ -729,277 +743,268 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
  []
 
 [7]) [8] (./04-resultados.tex
-<imagenes/colores.png, id=43, 3011.25pt x 5018.75pt>
+<imagenes/colores.png, id=45, 3011.25pt x 5018.75pt>
 File: imagenes/colores.png Graphic file (type png)
 
 <use imagenes/colores.png>
-Package pdftex.def Info: imagenes/colores.png used on input line 19.
-(pdftex.def)             Requested size: 120.42949pt x 200.7158pt.
-
-<imagenes/colores_bayer.png, id=44, 3011.25pt x 5018.75pt>
-File: imagenes/colores_bayer.png Graphic file (type png)
-
-<use imagenes/colores_bayer.png>
-Package pdftex.def Info: imagenes/colores_bayer.png used on input line 25.
-(pdftex.def)             Requested size: 120.42949pt x 200.7158pt.
- [9]
-<imagenes/colores_demosicing_bilineal.png, id=48, 3011.25pt x 5018.75pt>
-File: imagenes/colores_demosicing_bilineal.png Graphic file (type png)
-
-<use imagenes/colores_demosicing_bilineal.png>
-Package pdftex.def Info: imagenes/colores_demosicing_bilineal.png used on input
- line 34.
-(pdftex.def)             Requested size: 120.42949pt x 200.7158pt.
-
-<imagenes/colores_demosicing_quality.png, id=49, 3011.25pt x 5018.75pt>
-File: imagenes/colores_demosicing_quality.png Graphic file (type png)
-
-<use imagenes/colores_demosicing_quality.png>
-Package pdftex.def Info: imagenes/colores_demosicing_quality.png used on input 
-line 40.
-(pdftex.def)             Requested size: 120.42949pt x 200.7158pt.
-
-<imagenes/colores_demosicing_spline.png, id=50, 3011.25pt x 5018.75pt>
-File: imagenes/colores_demosicing_spline.png Graphic file (type png)
-
-<use imagenes/colores_demosicing_spline.png>
-Package pdftex.def Info: imagenes/colores_demosicing_spline.png used on input l
-ine 49.
-(pdftex.def)             Requested size: 120.42949pt x 200.7158pt.
-
-<imagenes/colores_demosicing_vecino.png, id=51, 3011.25pt x 5018.75pt>
-File: imagenes/colores_demosicing_vecino.png Graphic file (type png)
-
-<use imagenes/colores_demosicing_vecino.png>
-Package pdftex.def Info: imagenes/colores_demosicing_vecino.png used on input l
-ine 55.
-(pdftex.def)             Requested size: 120.42949pt x 200.7158pt.
- [10 <./imagenes/colores.png> <./imagenes/colores_bayer.png> <./imagenes/colore
-s_demosicing_bilineal.png> <./imagenes/colores_demosicing_quality.png>]
-<imagenes/colores_bilineal_zoom.jpg, id=59, 188.705pt x 482.80376pt>
+Package pdftex.def Info: imagenes/colores.png used on input line 16.
+(pdftex.def)             Requested size: 90.3336pt x 150.556pt.
+ [9 <./imagenes/colores.png>]
+<imagenes/colores_bilineal_zoom.jpg, id=50, 188.705pt x 482.80376pt>
 File: imagenes/colores_bilineal_zoom.jpg Graphic file (type jpg)
 
 <use imagenes/colores_bilineal_zoom.jpg>
 Package pdftex.def Info: imagenes/colores_bilineal_zoom.jpg used on input line 
-67.
+28.
 (pdftex.def)             Requested size: 113.22386pt x 289.6845pt.
 
-<imagenes/colores_hq_zoom.jpg, id=60, 188.705pt x 482.80376pt>
+<imagenes/colores_hq_zoom.jpg, id=51, 188.705pt x 482.80376pt>
 File: imagenes/colores_hq_zoom.jpg Graphic file (type jpg)
 
 <use imagenes/colores_hq_zoom.jpg>
-Package pdftex.def Info: imagenes/colores_hq_zoom.jpg used on input line 73.
+Package pdftex.def Info: imagenes/colores_hq_zoom.jpg used on input line 34.
 (pdftex.def)             Requested size: 113.22386pt x 289.6845pt.
- [11 <./imagenes/colores_demosicing_spline.png> <./imagenes/colores_demosicing_
-vecino.png> <./imagenes/colores_bilineal_zoom.jpg> <./imagenes/colores_hq_zoom.
-jpg>]
-<imagenes/colores_directional_zoom.jpg, id=66, 188.705pt x 482.80376pt>
+ [10 <./imagenes/colores_bilineal_zoom.jpg> <./imagenes/colores_hq_zoom.jpg>]
+<imagenes/colores_directional_zoom.jpg, id=55, 188.705pt x 482.80376pt>
 File: imagenes/colores_directional_zoom.jpg Graphic file (type jpg)
 
 <use imagenes/colores_directional_zoom.jpg>
 Package pdftex.def Info: imagenes/colores_directional_zoom.jpg used on input li
-ne 82.
+ne 43.
 (pdftex.def)             Requested size: 113.22386pt x 289.6845pt.
 
-<imagenes/colores_vecinos_zoom.jpg, id=67, 188.705pt x 482.80376pt>
+<imagenes/colores_vecinos_zoom.jpg, id=56, 188.705pt x 482.80376pt>
 File: imagenes/colores_vecinos_zoom.jpg Graphic file (type jpg)
 
 <use imagenes/colores_vecinos_zoom.jpg>
-Package pdftex.def Info: imagenes/colores_vecinos_zoom.jpg used on input line 8
-8.
+Package pdftex.def Info: imagenes/colores_vecinos_zoom.jpg used on input line 4
+9.
 (pdftex.def)             Requested size: 113.22386pt x 289.6845pt.
- [12 <./imagenes/colores_directional_zoom.jpg> <./imagenes/colores_vecinos_zoom
+ [11 <./imagenes/colores_directional_zoom.jpg> <./imagenes/colores_vecinos_zoom
 .jpg>]
-<imagenes/img9.png, id=72, 770.88pt x 513.92pt>
+<imagenes/cuadrados_colores.png, id=62, 1304.875pt x 1304.875pt>
+File: imagenes/cuadrados_colores.png Graphic file (type png)
+
+<use imagenes/cuadrados_colores.png>
+Package pdftex.def Info: imagenes/cuadrados_colores.png used on input line 91.
+(pdftex.def)             Requested size: 260.97038pt x 260.97038pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+
+ []
+
+[12
+
+ <./imagenes/cuadrados_colores.png>] [13]
 File: imagenes/img9.png Graphic file (type png)
  <use imagenes/img9.png>
-Package pdftex.def Info: imagenes/img9.png used on input line 132.
+Package pdftex.def Info: imagenes/img9.png used on input line 133.
 (pdftex.def)             Requested size: 256.0748pt x 170.71548pt.
-
-<imagenes/img9_bayer.png, id=73, 578.16pt x 385.44pt>
 File: imagenes/img9_bayer.png Graphic file (type png)
 
 <use imagenes/img9_bayer.png>
-Package pdftex.def Info: imagenes/img9_bayer.png used on input line 134.
+Package pdftex.def Info: imagenes/img9_bayer.png used on input line 135.
 (pdftex.def)             Requested size: 256.0748pt x 170.71158pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 132--136
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 133--137
 [][]  []
  []
 
-<imagenes/img9_demosicing_vecino.png, id=74, 578.16pt x 385.44pt>
+<imagenes/img9_demosicing_vecino.png, id=70, 578.16pt x 385.44pt>
 File: imagenes/img9_demosicing_vecino.png Graphic file (type png)
 
 <use imagenes/img9_demosicing_vecino.png>
 Package pdftex.def Info: imagenes/img9_demosicing_vecino.png used on input line
- 139.
+ 140.
 (pdftex.def)             Requested size: 256.0748pt x 170.71158pt.
 
-<imagenes/img9_demosicing_bilineal.png, id=75, 578.16pt x 385.44pt>
+<imagenes/img9_demosicing_bilineal.png, id=71, 578.16pt x 385.44pt>
 File: imagenes/img9_demosicing_bilineal.png Graphic file (type png)
 
 <use imagenes/img9_demosicing_bilineal.png>
 Package pdftex.def Info: imagenes/img9_demosicing_bilineal.png used on input li
-ne 141.
+ne 142.
 (pdftex.def)             Requested size: 256.0748pt x 170.71158pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 139--143
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 140--144
 [][]  []
  []
 
-<imagenes/img9_demosicing_spline.png, id=76, 578.16pt x 385.44pt>
+<imagenes/img9_demosicing_spline.png, id=72, 578.16pt x 385.44pt>
 File: imagenes/img9_demosicing_spline.png Graphic file (type png)
 
 <use imagenes/img9_demosicing_spline.png>
 Package pdftex.def Info: imagenes/img9_demosicing_spline.png used on input line
- 147.
+ 148.
 (pdftex.def)             Requested size: 256.0748pt x 170.71158pt.
 
-<imagenes/img9_demosicing_quality.png, id=77, 578.16pt x 385.44pt>
+<imagenes/img9_demosicing_quality.png, id=73, 578.16pt x 385.44pt>
 File: imagenes/img9_demosicing_quality.png Graphic file (type png)
 
 <use imagenes/img9_demosicing_quality.png>
 Package pdftex.def Info: imagenes/img9_demosicing_quality.png used on input lin
-e 149.
+e 150.
 (pdftex.def)             Requested size: 256.0748pt x 170.71158pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 147--151
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 148--152
 [][]  []
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13 <./imagenes/img9.png> <./imagenes/img9_bayer.png> <./imagenes/img9_demosici
-ng_vecino.png> <./imagenes/img9_demosicing_bilineal.png>]
-<imagenes/img9_demosicing_vecino_cropped.png, id=82, 82.80937pt x 54.2025pt>
+[14
+
+ <./imagenes/img9_demosicing_vecino.png> <./imagenes/img9_demosicing_bilineal.p
+ng>]
+<imagenes/img9_demosicing_vecino_cropped.png, id=77, 82.80937pt x 54.2025pt>
 File: imagenes/img9_demosicing_vecino_cropped.png Graphic file (type png)
 
 <use imagenes/img9_demosicing_vecino_cropped.png>
 Package pdftex.def Info: imagenes/img9_demosicing_vecino_cropped.png used on in
-put line 168.
+put line 169.
 (pdftex.def)             Requested size: 256.0748pt x 167.6687pt.
 
-<imagenes/img9_demosicing_bilineal_cropped.png, id=84, 78.2925pt x 63.23625pt>
+<imagenes/img9_demosicing_bilineal_cropped.png, id=79, 78.2925pt x 63.23625pt>
 File: imagenes/img9_demosicing_bilineal_cropped.png Graphic file (type png)
 
 <use imagenes/img9_demosicing_bilineal_cropped.png>
 Package pdftex.def Info: imagenes/img9_demosicing_bilineal_cropped.png used on 
-input line 173.
+input line 174.
 (pdftex.def)             Requested size: 256.0748pt x 206.85849pt.
 
-<imagenes/img9_demosicing_spline_cropped.png, id=85, 64.74188pt x 48.18pt>
+<imagenes/img9_demosicing_spline_cropped.png, id=80, 64.74188pt x 48.18pt>
 File: imagenes/img9_demosicing_spline_cropped.png Graphic file (type png)
 
 <use imagenes/img9_demosicing_spline_cropped.png>
 Package pdftex.def Info: imagenes/img9_demosicing_spline_cropped.png used on in
-put line 178.
+put line 179.
 (pdftex.def)             Requested size: 256.0748pt x 190.63448pt.
 
-<imagenes/img9_demosicing_quality_cropped.png, id=86, 77.53969pt x 55.70813pt>
+<imagenes/img9_demosicing_quality_cropped.png, id=81, 77.53969pt x 55.70813pt>
 File: imagenes/img9_demosicing_quality_cropped.png Graphic file (type png)
 
 <use imagenes/img9_demosicing_quality_cropped.png>
 Package pdftex.def Info: imagenes/img9_demosicing_quality_cropped.png used on i
-nput line 183.
+nput line 184.
 (pdftex.def)             Requested size: 256.0748pt x 183.99544pt.
- [14 <./imagenes/img9_demosicing_spline.png> <./imagenes/img9_demosicing_qualit
-y.png> <./imagenes/img9_demosicing_vecino_cropped.png>] [15 <./imagenes/img9_de
+ [15 <./imagenes/img9_demosicing_spline.png> <./imagenes/img9_demosicing_qualit
+y.png> <./imagenes/img9_demosicing_vecino_cropped.png>] [16 <./imagenes/img9_de
 mosicing_bilineal_cropped.png> <./imagenes/img9_demosicing_spline_cropped.png> 
-<./imagenes/img9_demosicing_quality_cropped.png>] <imagenes/img12.png, id=97, 7
+<./imagenes/img9_demosicing_quality_cropped.png>] <imagenes/img12.png, id=92, 7
 70.88pt x 513.92pt>
 File: imagenes/img12.png Graphic file (type png)
 
 <use imagenes/img12.png>
-Package pdftex.def Info: imagenes/img12.png used on input line 198.
+Package pdftex.def Info: imagenes/img12.png used on input line 199.
 (pdftex.def)             Requested size: 231.26578pt x 154.17719pt.
 
-<imagenes/img12_demosicing_bilineal.png, id=98, 770.88pt x 513.92pt>
+<imagenes/img12_demosicing_bilineal.png, id=93, 770.88pt x 513.92pt>
 File: imagenes/img12_demosicing_bilineal.png Graphic file (type png)
 
 <use imagenes/img12_demosicing_bilineal.png>
 Package pdftex.def Info: imagenes/img12_demosicing_bilineal.png used on input l
-ine 207.
+ine 208.
 (pdftex.def)             Requested size: 231.26578pt x 154.17719pt.
 
-<imagenes/img12_demosicing_quality.png, id=99, 770.88pt x 513.92pt>
+<imagenes/img12_demosicing_quality.png, id=94, 770.88pt x 513.92pt>
 File: imagenes/img12_demosicing_quality.png Graphic file (type png)
 
 <use imagenes/img12_demosicing_quality.png>
 Package pdftex.def Info: imagenes/img12_demosicing_quality.png used on input li
-ne 213.
+ne 214.
 (pdftex.def)             Requested size: 231.26578pt x 154.17719pt.
 
-<imagenes/img12_demosicing_spline.png, id=100, 770.88pt x 513.92pt>
+<imagenes/img12_demosicing_spline.png, id=95, 770.88pt x 513.92pt>
 File: imagenes/img12_demosicing_spline.png Graphic file (type png)
 
 <use imagenes/img12_demosicing_spline.png>
 Package pdftex.def Info: imagenes/img12_demosicing_spline.png used on input lin
-e 222.
+e 223.
 (pdftex.def)             Requested size: 231.26578pt x 154.17719pt.
 
-<imagenes/img12_demosicing_vecino.png, id=101, 770.88pt x 513.92pt>
+<imagenes/img12_demosicing_vecino.png, id=96, 770.88pt x 513.92pt>
 File: imagenes/img12_demosicing_vecino.png Graphic file (type png)
 
 <use imagenes/img12_demosicing_vecino.png>
 Package pdftex.def Info: imagenes/img12_demosicing_vecino.png used on input lin
-e 228.
+e 229.
 (pdftex.def)             Requested size: 231.26578pt x 154.17719pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[16 <./imagenes/img12.png> <./imagenes/img12_demosicing_bilineal.png> <./imagen
-es/img12_demosicing_quality.png>] [17 <./imagenes/img12_demosicing_spline.png> 
+[17 <./imagenes/img12.png> <./imagenes/img12_demosicing_bilineal.png> <./imagen
+es/img12_demosicing_quality.png>] [18 <./imagenes/img12_demosicing_spline.png> 
 <./imagenes/img12_demosicing_vecino.png>]
-<imagenes/img8_moire_original.png, id=108, 363.3575pt x 296.10625pt>
+<imagenes/img8_moire_original.png, id=103, 363.3575pt x 296.10625pt>
 File: imagenes/img8_moire_original.png Graphic file (type png)
 
 <use imagenes/img8_moire_original.png>
 Package pdftex.def Info: imagenes/img8_moire_original.png used on input line 26
-7.
+8.
 (pdftex.def)             Requested size: 128.0374pt x 104.33905pt.
 
-<imagenes/img8_moire.png, id=109, 200.75pt x 166.6225pt>
+<imagenes/img8_moire.png, id=104, 200.75pt x 166.6225pt>
 File: imagenes/img8_moire.png Graphic file (type png)
 
 <use imagenes/img8_moire.png>
-Package pdftex.def Info: imagenes/img8_moire.png used on input line 273.
+Package pdftex.def Info: imagenes/img8_moire.png used on input line 274.
 (pdftex.def)             Requested size: 128.0374pt x 106.277pt.
 
-<imagenes/img5_zippering_original.png, id=110, 68.255pt x 103.38625pt>
+<imagenes/img5_zippering_original.png, id=105, 68.255pt x 103.38625pt>
 File: imagenes/img5_zippering_original.png Graphic file (type png)
 
 <use imagenes/img5_zippering_original.png>
 Package pdftex.def Info: imagenes/img5_zippering_original.png used on input lin
-e 287.
+e 286.
 (pdftex.def)             Requested size: 128.0374pt x 193.95126pt.
 
-<imagenes/img5_zippering.png, id=111, 68.255pt x 112.42pt>
+<imagenes/img5_zippering.png, id=106, 68.255pt x 112.42pt>
 File: imagenes/img5_zippering.png Graphic file (type png)
 
 <use imagenes/img5_zippering.png>
-Package pdftex.def Info: imagenes/img5_zippering.png used on input line 293.
+Package pdftex.def Info: imagenes/img5_zippering.png used on input line 292.
 (pdftex.def)             Requested size: 128.0374pt x 210.89847pt.
 
-<imagenes/img3_blur_original.png, id=112, 250.9375pt x 247.92625pt>
+<imagenes/img3_blur_original.png, id=107, 250.9375pt x 247.92625pt>
 File: imagenes/img3_blur_original.png Graphic file (type png)
 
 <use imagenes/img3_blur_original.png>
-Package pdftex.def Info: imagenes/img3_blur_original.png used on input line 304
+Package pdftex.def Info: imagenes/img3_blur_original.png used on input line 303
 .
 (pdftex.def)             Requested size: 128.0374pt x 126.50502pt.
 
-<imagenes/img3_blur.png, id=113, 242.9075pt x 238.8925pt>
+<imagenes/img3_blur.png, id=108, 242.9075pt x 238.8925pt>
 File: imagenes/img3_blur.png Graphic file (type png)
 
 <use imagenes/img3_blur.png>
-Package pdftex.def Info: imagenes/img3_blur.png used on input line 310.
+Package pdftex.def Info: imagenes/img3_blur.png used on input line 309.
 (pdftex.def)             Requested size: 128.0374pt x 125.91983pt.
- [18 <./imagenes/img8_moire_original.png> <./imagenes/img8_moire.png> <./imagen
-es/img5_zippering_original.png> <./imagenes/img5_zippering.png>]) [19 <./imagen
-es/img3_blur_original.png> <./imagenes/img3_blur.png>] (./06-conclusiones.tex
-<imagenes/tiempo_algoritmos_random.png, id=128, 848.9316pt x 595.9866pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<imagenes/img5_ringing_original.png, id=109, 210.7875pt x 187.70125pt>
+File: imagenes/img5_ringing_original.png Graphic file (type png)
+
+<use imagenes/img5_ringing_original.png>
+Package pdftex.def Info: imagenes/img5_ringing_original.png used on input line 
+321.
+(pdftex.def)             Requested size: 128.0374pt x 114.01642pt.
+
+<imagenes/img5_ringing.png, id=110, 171.64125pt x 144.54pt>
+File: imagenes/img5_ringing.png Graphic file (type png)
+
+<use imagenes/img5_ringing.png>
+Package pdftex.def Info: imagenes/img5_ringing.png used on input line 327.
+(pdftex.def)             Requested size: 128.0374pt x 107.82025pt.
+ [19 <./imagenes/img8_moire_original.png> <./imagenes/img8_moire.png> <./imagen
+es/img5_zippering_original.png> <./imagenes/img5_zippering.png>]) [20 <./imagen
+es/img3_blur_original.png> <./imagenes/img3_blur.png> <./imagenes/img5_ringing_
+original.png> <./imagenes/img5_ringing.png>]
+(./05-discusion.tex) [21] (./06-conclusiones.tex
+<imagenes/tiempo_algoritmos_random.png, id=129, 848.9316pt x 595.9866pt>
 File: imagenes/tiempo_algoritmos_random.png Graphic file (type png)
 
 <use imagenes/tiempo_algoritmos_random.png>
@@ -1007,21 +1012,21 @@ Package pdftex.def Info: imagenes/tiempo_algoritmos_random.png used on input li
 ne 8.
 (pdftex.def)             Requested size: 512.1496pt x 359.56812pt.
 
-<imagenes/quality_performance.png, id=129, 481.8pt x 361.35pt>
+<imagenes/quality_performance.png, id=130, 481.8pt x 361.35pt>
 File: imagenes/quality_performance.png Graphic file (type png)
 
 <use imagenes/quality_performance.png>
 Package pdftex.def Info: imagenes/quality_performance.png used on input line 23
 .
 (pdftex.def)             Requested size: 385.4405pt x 289.0804pt.
- [20 <./imagenes/tiempo_algoritmos_random.png>] [21 <./imagenes/quality_perform
+ [22 <./imagenes/tiempo_algoritmos_random.png>] [23 <./imagenes/quality_perform
 ance.png>]) (./07-referencias.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 []$\OML/cmm/m/it/10.95 RonKimmel:Demosaicing \OT1/cmr/m/n/10.95 : \OML/cmm/m/it
 /10.95 imagereconstructionfromcolorccdsamples:IMAGEPRO \OMS/cmsy/m/n/10.95 ^^@
  []
 
-) [22] 
+) [24] 
 AED: lastpage setting LastPage
 (./tp3.aux
 LaTeX Info: Redefining \. on input line 6.
@@ -1033,16 +1038,16 @@ LaTeX Warning: There were multiply-defined labels.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 97 ({)
+### simple group (level 1) entered at line 58 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7750 strings out of 493117
- 112020 string characters out of 6135433
+ 7743 strings out of 493117
+ 111586 string characters out of 6135433
  256829 words of memory out of 5000000
- 11016 multiletter control sequences out of 15000+600000
+ 11008 multiletter control sequences out of 15000+600000
  11394 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,13n,43p,1090b,1072s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,14n,43p,1090b,1072s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
@@ -1058,10 +1063,10 @@ fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on tp3.pdf (22 pages, 10760847 bytes).
+Output written on tp3.pdf (24 pages, 11719745 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 190 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
