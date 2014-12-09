@@ -205,15 +205,8 @@ La solución a dicho problema fue de antemano chequear que la resta, no me convi
 \caption{highQuality($imagenBayerizada$)}\label{euclid}
 \begin{algorithmic}[1]
 \State $\textit{hacerBilineal(imagenBayerizada)}$
-\State $\textit{coeficientes $=$ new Matrix([0,0])}$ \Comment De la tupla el primero representa el coeficiente horizonal, el otro el vertical
-\For{$cada\ fila\ en\ imagenBayerizada.menosPrimerayUltima$}
-  \State $resolverPorSpline(horizontal,fila)$ \Comment Llenará la matriz de coeficientes
-\EndFor
-\For{$cada\ columna\ en\ imagenBayerizada.menosPrimerayUltima$}
-  \State $resolverPorSpline(vertical,columna)$ \Comment Llenará la matriz de coeficientes
-\EndFor
-\For{$cada\ celda\ en\ imagenBayerizada$}
-  \If{$celda\ es\ verde$}
+\For{$cada\ celda\ en\ imagenBayerizada.menosElBorde$}
+  \If{$celda\ no\ es\ verde$}
       \State $derivadaX,derivadaY = calcularDerivadasDireccionales(celda)$
       \If{$derivadaX > derivadaY$}      
         \State \textit{$celda.verde = 0.3 * coeficientes.celda.horizontal + 0.7 * coeficientes.celda.vertical;$}
