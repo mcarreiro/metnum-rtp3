@@ -258,10 +258,10 @@ Como dato interesante vale aclarar que en el tejado de la casa podemos ver anoma
 \subsection{Calidad subjetiva}
 
 En las secciones anteriores analizamos la calidad de las imágenes basándonos en los valores de los pixeles que resultaban después de aplicar los distintos algoritmos de demosaicing y la comparamos con la original pero no teníamos en cuenta las diferencias entre estas a la vista del ojo humano. Por esto último en esta sección mediremos la calidad subjetiva de las imágenes en base a los \textbf{artifacts} que se pueden encontrar en cada una de ellas.\\
+Lo llamativo es que en mayor o menor intensidad los artifacts aparecen en los 4 algoritmos:
 
-\subsubsection{Moiré}
-
-
+\subsubsection{Moiré / False color}
+Ocurre en los 4 algoritmos por igual
 \begin{figure}[h]
 \minipage{0.5\textwidth}
 \begin{center}
@@ -276,10 +276,43 @@ En las secciones anteriores analizamos la calidad de las imágenes basándonos e
          \end{center}
 \endminipage
 \end{figure}
-
-\subsubsection{False color}
 \subsubsection{Zippering}
+
+Si bien aparece en todos los algoritmos, en el de \textit{Vecinos} aparece en mayor intensidad y siendo muy notorio.
+
+\begin{figure}[h]
+\minipage{0.5\textwidth}
+\begin{center}
+       \includegraphics[width=0.5\textwidth]{imagenes/img5_zippering_original.png}
+        \caption{}
+        \end{center}
+\endminipage
+\minipage{0.5\textwidth}
+\begin{center}
+       \includegraphics[width=0.5\textwidth]{imagenes/img5_zippering.png}
+        \caption{}
+         \end{center}
+\endminipage
+\end{figure}
+
 \subsubsection{Blur}
+
+\begin{figure}[h]
+\minipage{0.5\textwidth}
+\begin{center}
+       \includegraphics[width=0.5\textwidth]{imagenes/img3_blur_original.png}
+        \caption{}
+        \end{center}
+\endminipage
+\minipage{0.5\textwidth}
+\begin{center}
+       \includegraphics[width=0.5\textwidth]{imagenes/img3_blur.png}
+        \caption{}
+         \end{center}
+\endminipage
+\end{figure}
+
+
 \subsubsection{Ringing}
 
 

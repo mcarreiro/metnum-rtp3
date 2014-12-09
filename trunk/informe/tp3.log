@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.30)  7 DEC 2014 16:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.30)  9 DEC 2014 01:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -952,10 +952,6 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [16 <./imagenes/img12.png> <./imagenes/img12_demosicing_bilineal.png> <./imagen
 es/img12_demosicing_quality.png>] [17 <./imagenes/img12_demosicing_spline.png> 
 <./imagenes/img12_demosicing_vecino.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-
- []
-
 <imagenes/img8_moire_original.png, id=108, 363.3575pt x 296.10625pt>
 File: imagenes/img8_moire_original.png Graphic file (type png)
 
@@ -970,9 +966,40 @@ File: imagenes/img8_moire.png Graphic file (type png)
 <use imagenes/img8_moire.png>
 Package pdftex.def Info: imagenes/img8_moire.png used on input line 273.
 (pdftex.def)             Requested size: 128.0374pt x 106.277pt.
-) [18 <./imagenes/img8_moire_original.png> <./imagenes/img8_moire.png>] (./06-c
-onclusiones.tex
-<imagenes/tiempo_algoritmos_random.png, id=115, 848.9316pt x 595.9866pt>
+
+<imagenes/img5_zippering_original.png, id=110, 68.255pt x 103.38625pt>
+File: imagenes/img5_zippering_original.png Graphic file (type png)
+
+<use imagenes/img5_zippering_original.png>
+Package pdftex.def Info: imagenes/img5_zippering_original.png used on input lin
+e 287.
+(pdftex.def)             Requested size: 128.0374pt x 193.95126pt.
+
+<imagenes/img5_zippering.png, id=111, 68.255pt x 112.42pt>
+File: imagenes/img5_zippering.png Graphic file (type png)
+
+<use imagenes/img5_zippering.png>
+Package pdftex.def Info: imagenes/img5_zippering.png used on input line 293.
+(pdftex.def)             Requested size: 128.0374pt x 210.89847pt.
+
+<imagenes/img3_blur_original.png, id=112, 250.9375pt x 247.92625pt>
+File: imagenes/img3_blur_original.png Graphic file (type png)
+
+<use imagenes/img3_blur_original.png>
+Package pdftex.def Info: imagenes/img3_blur_original.png used on input line 304
+.
+(pdftex.def)             Requested size: 128.0374pt x 126.50502pt.
+
+<imagenes/img3_blur.png, id=113, 242.9075pt x 238.8925pt>
+File: imagenes/img3_blur.png Graphic file (type png)
+
+<use imagenes/img3_blur.png>
+Package pdftex.def Info: imagenes/img3_blur.png used on input line 310.
+(pdftex.def)             Requested size: 128.0374pt x 125.91983pt.
+ [18 <./imagenes/img8_moire_original.png> <./imagenes/img8_moire.png> <./imagen
+es/img5_zippering_original.png> <./imagenes/img5_zippering.png>]) [19 <./imagen
+es/img3_blur_original.png> <./imagenes/img3_blur.png>] (./06-conclusiones.tex
+<imagenes/tiempo_algoritmos_random.png, id=128, 848.9316pt x 595.9866pt>
 File: imagenes/tiempo_algoritmos_random.png Graphic file (type png)
 
 <use imagenes/tiempo_algoritmos_random.png>
@@ -980,21 +1007,21 @@ Package pdftex.def Info: imagenes/tiempo_algoritmos_random.png used on input li
 ne 8.
 (pdftex.def)             Requested size: 512.1496pt x 359.56812pt.
 
-<imagenes/quality_performance.png, id=116, 481.8pt x 361.35pt>
+<imagenes/quality_performance.png, id=129, 481.8pt x 361.35pt>
 File: imagenes/quality_performance.png Graphic file (type png)
 
 <use imagenes/quality_performance.png>
 Package pdftex.def Info: imagenes/quality_performance.png used on input line 23
 .
 (pdftex.def)             Requested size: 385.4405pt x 289.0804pt.
- [19 <./imagenes/tiempo_algoritmos_random.png>] [20 <./imagenes/quality_perform
+ [20 <./imagenes/tiempo_algoritmos_random.png>] [21 <./imagenes/quality_perform
 ance.png>]) (./07-referencias.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 []$\OML/cmm/m/it/10.95 RonKimmel:Demosaicing \OT1/cmr/m/n/10.95 : \OML/cmm/m/it
 /10.95 imagereconstructionfromcolorccdsamples:IMAGEPRO \OMS/cmsy/m/n/10.95 ^^@
  []
 
-) [21] 
+) [22] 
 AED: lastpage setting LastPage
 (./tp3.aux
 LaTeX Info: Redefining \. on input line 6.
@@ -1009,11 +1036,11 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 97 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7728 strings out of 493117
- 111376 string characters out of 6135433
+ 7750 strings out of 493117
+ 112020 string characters out of 6135433
  256829 words of memory out of 5000000
- 10999 multiletter control sequences out of 15000+600000
- 11048 words of font info for 42 fonts, out of 8000000 for 9000
+ 11016 multiletter control sequences out of 15000+600000
+ 11394 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,13n,43p,1090b,1072s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
@@ -1029,11 +1056,12 @@ fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on tp3.pdf (21 pages, 9589010 bytes).
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on tp3.pdf (22 pages, 10760847 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 189 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
