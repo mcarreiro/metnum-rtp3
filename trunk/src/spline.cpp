@@ -113,14 +113,14 @@ public:
         	}
         }
 
-        for(int j=1; j< height-2; j++) {
+        for(int j=1; j< height-1; j++) {
         	if (j % 2 == 0)
 				plantearYResolverHorizontal(j,imagen,AZUL);
 			else
    				plantearYResolverHorizontal(j,imagen,ROJO);
     	}	
 
-    	for(int i=1; i< width-2; i++) {
+    	for(int i=1; i< width-1; i++) {
     		if (i % 2 == 0)
 				plantearYResolverVertical(i,imagen,AZUL);
 			else
