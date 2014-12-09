@@ -1,7 +1,7 @@
 #!/bin/sh
 
   for i in $(seq 100 100 2500); do
-	#python image_random.py $i $i random_$i
+	python image_random.py $i $i random_$i
 	echo $i
 	echo "vecinos"
 	python image_time.py random_$i vecino >> vecinos_random
