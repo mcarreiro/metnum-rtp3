@@ -1,6 +1,6 @@
 #!/bin/sh
 
-  for i in $(seq 100 100 2500); do
+  for i in $(seq 2000 100 2500); do
 	python image_random.py $i $i ../images/random_$i
 	echo $i
 	echo "vecinos"
