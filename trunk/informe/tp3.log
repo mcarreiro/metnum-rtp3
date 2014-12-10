@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.30)  9 DEC 2014 23:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.30)  10 DEC 2014 00:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1023,16 +1023,30 @@ Package pdftex.def Info: imagenes/tiempo_algoritmos_random.png used on input li
 ne 8.
 (pdftex.def)             Requested size: 512.1496pt x 359.72218pt.
 
-<imagenes/quality_performance.png, id=133, 481.8pt x 361.35pt>
+<imagenes/tiempo_algoritmos_plain.png, id=133, 1056.94875pt x 743.77875pt>
+File: imagenes/tiempo_algoritmos_plain.png Graphic file (type png)
+
+<use imagenes/tiempo_algoritmos_plain.png>
+Package pdftex.def Info: imagenes/tiempo_algoritmos_plain.png used on input lin
+e 12.
+(pdftex.def)             Requested size: 512.1496pt x 360.40314pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<imagenes/quality_performance.png, id=134, 481.8pt x 361.35pt>
 File: imagenes/quality_performance.png Graphic file (type png)
 
 <use imagenes/quality_performance.png>
-Package pdftex.def Info: imagenes/quality_performance.png used on input line 23
+Package pdftex.def Info: imagenes/quality_performance.png used on input line 27
 .
 (pdftex.def)             Requested size: 385.4405pt x 289.0804pt.
- [23 <./imagenes/tiempo_algoritmos_random.png>] [24 <./imagenes/quality_perform
-ance.png>]) (./07-referencias.tex)
-[25] 
+ [23 <./imagenes/tiempo_algoritmos_random.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24 <./imagenes/tiempo_algoritmos_plain.png>]) (./07-referencias.tex [25 <./ima
+genes/quality_performance.png>]) [26] 
 AED: lastpage setting LastPage
 (./tp3.aux
 LaTeX Info: Redefining \. on input line 6.
@@ -1047,10 +1061,10 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 58 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 7527 strings out of 493117
- 110230 string characters out of 6135433
+ 7532 strings out of 493117
+ 110420 string characters out of 6135433
  191841 words of memory out of 5000000
- 10787 multiletter control sequences out of 15000+600000
+ 10791 multiletter control sequences out of 15000+600000
  12871 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,14n,43p,1092b,418s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1069,10 +1083,10 @@ fb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
 /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
 r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on tp3.pdf (25 pages, 11785582 bytes).
+Output written on tp3.pdf (26 pages, 11948631 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 200 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 166 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
