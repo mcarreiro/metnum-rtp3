@@ -35,7 +35,7 @@ Por esto es que desarrollamos una función muy simple que realiza esta transform
 Una forma que utilizaremos para medir la calidad subjetiva de los distintos algoritmos de demosaicing para las imágenes con las que experimentaremos es mediante la detección de \textbf{artifacts}. Los artifacts son defectos comunes que ocurren en el procesamiento de imágenes y que han sido categorizados para un mejor análisis, entre los cuales podemos encontrar y nos enfocaremos: Moiré, False Color, Zippering, Blur y Ringing/Edge. Por tal motivo vamos a definir y mostrar un ejemplo de cada uno:
 
 \textbf{Moiré}:\\
-\\
+El artifact Moiré ocurre en zonas de la imagen en donde hay lineas muy cercanas y que producto de los algoritmos de demosaicing se producen superposiciones de las mismas, dando como resultado en la mayoría de los casos un nuevo patrón sobre ellas\\
 
 \begin{figure}[htb]
 \begin{center}
@@ -49,7 +49,7 @@ Una forma que utilizaremos para medir la calidad subjetiva de los distintos algo
 \end{figure}
 
 \textbf{False Color}:\\
-El artifact False Color ocurre cuando el algoritmo de demosaicing arroja como resultado una zona en la imagen de distinto color al original.
+El artifact False Color ocurre cuando el algoritmo de demosaicing arroja como resultado una zona en la imagen de distinto color al original. Suele venir acompañado cuando ocurre Moiré
 \\
 \textbf{Zippering}:\\
 El artifact Zippering (cremallera) es un artifact que suele ocurrir en zonas de la imagen donde hay elementos borde, donde en la misma se genera un cambio abrupto en los valores, y consiste en que se produce un efecto de lineas que tienen mucha similitud a una cremallera en estos bordes
