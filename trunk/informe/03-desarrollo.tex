@@ -187,7 +187,8 @@ $f_j(x) = d_j(x-x_j)^3 + c_j(x-x_j)^2 + b_j(x-x_j) + a_j\ \forall$ $x_j \leq x <
 
 Solo queda calcular el valor del verde en el pixel rojo o azul.
 Es fácil notar que $(x-x_j) = 1$, por lo que para cada función el resultado va a ser $d_j+c_j+b_j+a_j$, siendo $a_j$ = el verde original en ese pixel.\\
-Solo queda triangular y obtener cada una de las $b_j$ ,$c_j$ y $d_j$.
+Solo queda triangular y obtener cada una de las $b_j$ ,$c_j$ y $d_j$.\\
+La implementación está extraída del algoritmo presentado en el libro Burden y Faires $[1]$
 
 \subsubsection{Decisión de parámetros}
 La elección de color está dada en relación a los valores calculados por el spline, y como ya hemos explicado cada uno aportará en distinta proporción a partir del valor de la derivada. La pregunta es ahora, en cuánta medida para cada una. Hicimos pruebas y llegamos a la conclusión de que lo mejor es el par 03,07 a partir de la comparación objetiva de PSNR. Recordemos que a mayor valor, mejor es el resultado y más parecido a la imagen original.
