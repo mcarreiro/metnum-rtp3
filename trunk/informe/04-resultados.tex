@@ -60,9 +60,9 @@ $$
 \begin{bmatrix}
            &      PSNR     \\
        highquality    &   39.67   \\
-       bilineal    &      41.14   \\
-       directional    &      48.13    \\
-       vecinos   &      48.13      \\
+       bilineal       &   41.14   \\
+       directional    &   48.13    \\
+       vecinos        &   48.13      \\
 \end{bmatrix} 
 $$
 
@@ -71,10 +71,10 @@ A continuación veremos también cual fué el tiempo de computo de cada algoritm
 $$ 
 \begin{bmatrix}
            &      Tiempo (segundos)     \\
+       directional    &   67.82    \\
        highquality    &   64.88   \\
-       bilineal    &      63.00   \\
-       directional    &      57.82    \\
-       vecinos   &      10.31      \\
+       bilineal       &   63.00   \\
+       vecinos        &   10.31      \\
 \end{bmatrix} 
 $$
 
@@ -102,23 +102,23 @@ $$
 \begin{bmatrix}
            &      PSNR     \\
        highquality    &   38.58   \\
-       bilineal    &      36.08  \\
-       directional    &      34.90    \\
-       vecinos   &      32.00      \\
+       bilineal       &   36.08  \\
+       directional    &   34.90    \\
+       vecinos        &   32.00      \\
 \end{bmatrix} 
 $$
 
-Efectivamente la mejor esta vez fué el highquality y el peor vecinos.
+Efectivamente la mejor esta vez fué el highquality y el peor vecinos. También tiene sentido que spline(direccional) haya sido peor en calidad ya que depende de toda la fila y columna mientras otros dependen de sus valores más próximos.
 \paragraph{Tiempos}
 A continuación veremos cual fué el tiempo que tomó cada algoritmo.
 
 $$ 
 \begin{bmatrix}
            &      Tiempo (segundos)     \\
+       directional    &   4.46    \\
        highquality    &   4.21   \\
-       bilineal    &      4.14   \\
-       directional    &      4.05    \\
-       vecinos   &      0.15      \\
+       bilineal       &   4.14   \\
+       vecinos        &   0.15      \\
 \end{bmatrix} 
 $$
 
