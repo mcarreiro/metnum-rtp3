@@ -5,6 +5,8 @@ La idea será comparar sus resultados subjetivamente, es decir a simple vista co
 vemos la imagen resultante, objetivamente y temporalmente, cuanto tiempo demora en ejecutarse el procedimiento, para poder concluir finalmente las ventajas y desventajas de cada uno. A continuación explicaremos como 
 implementamos cada uno.
 
+\subsubsection{Bordes}
+Los 4 algoritmos que presentaremos a continuación aproximan los colores de los pixeles en base a otros pixeles que se encuentran alrededor del mismo, por esta razon muchas veces no es posible aproximar estos valores en los bordes de la imagen ya que no se tiene información al respecto más alla de los mismos. Por lo cual, salvo el algoritmo de Vecinos que lo permitía, decidimos no aproximar los valores de los pixeles en el borde de la imágen al momento del demosaicing.
 
 \subsection{Vecinos}
 Este es el más simple de todos. La idea es estabelecer el valor de los colores faltantes de cada pixel en base al vecino que tenga dicho valor. Por ejemplo si estamos en un pixel azul le preguntamos a algun vecino rojo y 
@@ -53,7 +55,7 @@ otro verde su valor y los seteamos en los correspondientes colores de nuestro pi
 Se diferencia entre fila par e impar cuando la celda es verde ya que es distinta la disposición de sus vecinos en cada caso, esto en cambio se mantiene inmutable en los casos de celda roja o azul. La selección del
 vecino izquierdo y superior izquierdo cuando es roja es porque siempre existe ese vecino, a diferencia del derecho por ejemplo ya que el rojo puede ser una celda borde y no tener dicho adyacente. La misma idea aplicamos 
 al caso de la celda azul y de las verdes, apuntamos a elegir el vecino que siempre existe.
-
+\newpage
 \subsection{Bilineal}
 
 La interpolación es una forma de aproximar valores desconocidos en algún punto a partir de valores que sí conocemos, sabiendo de antemano que van a tener un cierto grado de error. Esto se puede trasladar a nuestro problema, ya que tenemos que aproximar valores para un color de pixel a partir de valores cercanos conocidos, con la única diferencia que en vez de ser en una dimensión como si fuese una funcion, esta será en dos dimensiones, de ahí el nombre de $'bilineal'$. Esta interpolación en 2 dimensiones se realiza a partir de los 4 puntos más cercanos del color del pixel que queremos aproximar. Para calcular el valor de dicho punto primero se saca el promedio de los valores en dirección horizontal, luego en dirección vertical y por último el promedio de dichos valores. Cabe aclarar que dependiendo el color de pixel actual y el color que se quiera aproximar, podemos llegar a tener información de solo 2 puntos cercanos, pero alineados en la misma dirección, con lo que solo se calculará la aproximación en esa dirección.
