@@ -7,7 +7,7 @@ A continuación expondremos los resultados obtenidos por cada algoritmo para dis
 \subsubsection{Colores}
 
 
-Se nos ocurrió que podría ser interesante chequear los comportamientos de estos procedimientos en una imagen con muchos bordes ya que estos, en algoritmos como el directional, son factores importantes y potencialmente conflictivos. Además hicimos que la imagen sea grande (5000 x 3000 pixeles) para poder analizar tiempos de computo y para influir en la calidad subjetiva, ya que si ponemos imágenes con mucha definición pequeños errores podrían pasar desapercividos para el ojo humano.
+Se nos ocurrió que podría ser interesante chequear los comportamientos de estos procedimientos en una imagen con muchos bordes ya que estos, en algoritmos como el directional, son factores importantes y potencialmente conflictivos. Además hicimos que la imagen sea grande (5000 x 3000 pixeles) para poder analizar tiempos de computo y para influir en la calidad subjetiva, ya que si ponemos imágenes con mucha definición pequeños errores podrían pasar desapercibidos para el ojo humano.
 
 \begin{figure}
 
@@ -65,7 +65,8 @@ $$
        vecinos        &   48.13      \\
 \end{bmatrix} 
 $$
-
+Llama la atención que el algoritmo de Vecinos tiene un PSNR muy alto, y a la vista del ojo humano la imágen aproximada queda perfecta. Sería muy ingenuo creer que esto ocurrirá siempre y no es una excepción ya que la imagen presenta caracteristicas que favorecen a este algoritmo. Como se pudo observar en la sección Desarrollo, el algoritmo no aproxima mediante un cálculo sino que $copia$ el valor de un pixel cercano, por tal razón y como la elección del pixel a copiar es siempre la misma sumado a que la imagen son lineas verticales de un color ocurre que los pixeles que toma son justo los que deberían ir en ese lugar. Más adelante veremos como si en lugar ser verticales son horizontales el algoritmo pierde mucha calidad y como resultado se obtiene una imagen peor que los otros algoritmos tanto objetiva como subjetivamente.
+\\\\
 A continuación veremos también cual fué el tiempo de computo de cada algoritmo.
 
 $$ 
@@ -81,7 +82,7 @@ $$
 Como era de esperarse, las proporciones de tiempo tienen sentido. Vecinos es el mas rápido ya que es el procedimiento mas simple y quality tarda mas que bilineal ya que antes aplica bilineal para luego mejorarlo (aunque en este caso no lo mejora). Para este caso tanto por calidad objetiva, subjetiva como en tiempo de cómputo vecinos parecería ser el mejor.
 
 
-\clearpage
+
 \subsubsection{Tablero de colores}
 Dado que en la prueba anterior tuvimos un resultado muy fuerte (que el PSNR de vecinos dió mejor que el de HighQuality). Decidimos hacer otra prueba más con este mismo formato para poder investigar un poco más que pasó.
 La imagen que tomamos fué la siguiente, que es parecida a la anterior en el sentido de que tiene muchos colores con límites bien drásticos,es decir que no hay cambios graduales de color sino que cambian de un pixel a otro. 
