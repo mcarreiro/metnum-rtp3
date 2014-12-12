@@ -4,6 +4,15 @@ El problema de Demosaicing consta de poder construir una imagen con información
 
 Particularmente estaremos analizando 4 algoritmos distintos que intentan solucionar esto. Ellos son: Vecinos, Bilineal, Direccional y High Quality. Todos estos deben aplicarse sobre imágenes en formato Bayer array, es decir, imágenes que en cada pixel tienen información sólo de un canal (Verde, Rojo o Azul) y estos además tienen una distribución especial (en la que por ejemplo el verde predomina en cantidad ya que es el color que mejor recepción tiene en el ojo humano).
 
+\begin{figure}[htb]
+\begin{center}
+       \includegraphics[width=0.2\textwidth]{imagenes/bayer.jpg}
+       \caption{Patrón de píxeles en una imagen bayerizada}
+       \end{center}
+
+\end{figure}
+
+
 Para nuestras pruebas lo que haremos es tomar imágenes con todos sus canales completos en todos lo pixeles y pasarlas al formato Bayer array. Como en lo que queremos hacer foco en este trabajo es la calidad de estos procedimientos y sus resultados, no nos interesa que la imagen Bayer haya sido tomada realmente por una cámara, es más, nos sirve más tener una imagen full color y transformala ya que así podemos comparar nuestros resultados contra la original.
 
 Por esto es que desarrollamos una función muy simple que realiza esta transformación. Básicamente lo que hace es: 
