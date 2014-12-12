@@ -2,10 +2,9 @@
 
 A continuación expondremos los resultados obtenidos por cada algoritmo para distintas imágenes. El objetivo será posteriormente hacer análisis de calidad subjetiva (es decir que vemos a simple vista), objetiva y tiempo de computos. Para, como dijimos en un principio, determinar ventajas y desventajas de cada uno de ellos. Para los análisis objetivos desarrollamos un programa en python que compara pixel a pixel basado en PSNR (Peak signal-to-noise ratio). Elegimos 3 casos particulares pero como se verá, los resultados son parecidos y se ha comportado de la misma manera en los otros ejemplos dados por la cátedra y lo mismo en otros ejemplos nuestros que no valían la pena ponerlos en el informe.
 
-\subsection{PNSR}
-Es un método para definir la relación entre una señal y el ruido de la regenaración de la misma expresado en decibeles. En este caso, así como es comunmente utilizado, sirve para resolver si la imagen final es "parecida" a la original. Es importante notar que a medida que mayor sea el resultado, mejor es la calidad de la imágen.
+\subsection{Expermientación individual}
 
-\subsection{Colores}
+\subsubsection{Colores}
 
 
 Se nos ocurrió que podría ser interesante chequear los comportamientos de estos procedimientos en una imagen con muchos bordes ya que estos, en algoritmos como el directional, son factores importantes y potencialmente conflictivos. Además hicimos que la imagen sea grande (5000 x 3000 pixeles) para poder analizar tiempos de computo y para influir en la calidad subjetiva, ya que si ponemos imágenes con mucha definición pequeños errores podrían pasar desapercividos para el ojo humano.
@@ -83,7 +82,7 @@ Como era de esperarse, las proporciones de tiempo tienen sentido. Vecinos es el 
 
 
 \clearpage
-\subsection{Tablero de colores}
+\subsubsection{Tablero de colores}
 Dado que en la prueba anterior tuvimos un resultado muy fuerte (que el PSNR de vecinos dió mejor que el de HighQuality). Decidimos hacer otra prueba más con este mismo formato para poder investigar un poco más que pasó.
 La imagen que tomamos fué la siguiente, que es parecida a la anterior en el sentido de que tiene muchos colores con límites bien drásticos,es decir que no hay cambios graduales de color sino que cambian de un pixel a otro. 
 \begin{figure}[!htb]
@@ -96,7 +95,7 @@ La imagen que tomamos fué la siguiente, que es parecida a la anterior en el sen
 
 Podemos observar que además la imagen tiene una marca de agua. Decidimos utilizarla igual porque nos va a terminar siendo útil también en nuestras pruebas.Esta imagen también es mas chica ya que ahora no nos interesa tanto el tiempo de cómputo\\
 Los resultados obtenidos tuvieron visibles diferencias a la imagen original. Las marcas de agua cambiaron de color (\textit{false color artifact}) en todos los casos y,a diferencia de la prueba anterior, el resultado de vecinos tuvo claros errores en los bordes mientras que los otros a simple vista parecería que no. No exponemos estos resultados para no sobre cargar de imágenes el informe pero dejamos adjunta la imagen original por si se desea corroborar esto haciendo uno mismo los tests.\\
-\subsubsection{Calidad cuantificable}
+\paragraph{Calidad cuantificable}
 Yendo a la parte que más nos interesaba, la calidad cuantificable. Podemos observar que ahora si tuvo un comportamiento mas intuitivo.
 
 $$ 
@@ -110,7 +109,7 @@ $$
 $$
 
 Efectivamente la mejor esta vez fué el highquality y el peor vecinos.
-\subsubsection{Tiempos}
+\paragraph{Tiempos}
 A continuación veremos cual fué el tiempo que tomó cada algoritmo.
 
 $$ 
@@ -124,16 +123,16 @@ $$
 $$
 
 \clearpage
-\subsection{Imagen 9 - Avión}
+\subsubsection{Imagen 9 - Avión}
 
 Nos pareció interesante hacer un análisis particular de la Imagen 9 ya que posee varias características en donde se pueden observar diferentes condiciones para ver como actúan los cuatro algoritmos, estos son: tener gran cantidad de sectores bordes, gran variedad de colores que contrastan altamente y principalmente tener texto. Destacamos esto último ya que una de las cualidades más importantes que deben poseer estos algoritmos es la de asegurar nitidez y suavidad, detalles que se ven al procesar imágenes que poseen texto. \\
 A continuación mostraremos el resultado de los algoritmos para esta imagen:
 
 \begin{figure}[h]
+\begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img9.png}
-           \hfill
-        \includegraphics[width=0.5\textwidth]{imagenes/img9_bayer.png}   
-        Imagen original y bayerizada
+        \caption{Imagen original}
+\end{center}
 \end{figure}
 
 \begin{figure}[h]
@@ -189,7 +188,7 @@ Acá si se puede observar la nitidez y suavidad que presenta cada algoritmo, vi�
 
 \newpage
 
-\subsection{Imagen 12}
+\subsubsection{Imagen 12}
 
 A continuación probaremos con una imagen provista por la cátedra para tener mas resultados sobre los cuales apoyarnos a la hora de sacar nuestras conclusiones. Obviaremos la imagen bayerizada ya que sólo
 nos interesaba ver que sea correcta la bayerización y con lo ya hecho eso queda claro.
@@ -252,9 +251,10 @@ Objetivamente el peor y el mejor se mantienen, debido a que quality es el de may
 
 Como dato interesante vale aclarar que en el tejado de la casa podemos ver anomalías en todos los resultados, así como también en los arboles que están a la izquierda y por encima. Más adelante analizaremos bien porque es que sucede esto.
 
+\subsection{Experimentación comparativa}
 
 \newpage
-\subsection{Comparación de tiempos}
+\subsubsection{Comparación de tiempos}
 
 En esta sección presentaremos una comparativa entre los tiempos que tarda cada algoritmo a medida que aumenta el tamaño de la imagen. Para tal fin testamos cada algoritmo con 2 tipos de imágenes cuadradas generadas que van aumentando su tamaño, una con pixeles de colores aleatorios y la otra con todos los pixeles del mismo color, es decir, plana. Creemos que es una forma correcta de comparar los tiempos ya que usamos la misma instancia para cada prueba y además utilizamos estas dos instancias para comprobar si la complejidad de los algoritmos se ve influenciada por la información que contiene la imagen además del tamaño.
 
@@ -282,7 +282,7 @@ Por último se puede observar que como creíamos, los tiempos que tardan los alg
 \textit{Para los experimentos incluimos dos archivos random.sh y plain.sh para simular los mismos}
 
 
-\subsection{Comparación de calidad}
+\subsubsection{Comparación de calidad}
 En esta sección compararemos solo los verdes de las imágenes y veremos los resultados utilizando PSNR. Recordemos que este término, calcula nivel de ruido en una señal.
 
 \begin{figure}[h]
@@ -297,12 +297,12 @@ utiliza toda la fila y toda la columna para calcular el valor de las coordenadas
 sujeto a valores distintos al valor final, a diferencia de Bilineal que está sujeto a sus vecinos directos que es 
 mucho más probable que tengan un valor más próximo. 
 
-\subsection{Calidad subjetiva}
+\subsubsection{Calidad subjetiva}
 
 En las secciones anteriores analizamos la calidad de las imágenes basándonos en los valores de los pixeles que resultaban después de aplicar los distintos algoritmos de demosaicing y la comparamos con la original pero no teníamos en cuenta las diferencias entre estas a la vista del ojo humano. Por esto último en esta sección mediremos la calidad subjetiva de las imágenes en base a los \textbf{artifacts} que se pueden encontrar en cada una de ellas.\\
 Lo llamativo es que en mayor o menor intensidad los artifacts aparecen en los 4 algoritmos:
 
-\subsubsection{Moiré / False color}
+\paragraph{Moiré / False color}
 Ocurre en los 4 algoritmos por igual
 \begin{figure}[h]
 \minipage{0.5\textwidth}
@@ -318,7 +318,7 @@ Ocurre en los 4 algoritmos por igual
          \end{center}
 \endminipage
 \end{figure}
-\subsubsection{Zippering}
+\paragraph{Zippering}
 
 Si bien aparece en todos los algoritmos, en el de \textit{Vecinos} aparece en mayor intensidad y siendo muy notorio.
 
@@ -338,7 +338,7 @@ Si bien aparece en todos los algoritmos, en el de \textit{Vecinos} aparece en ma
 \end{figure}
 
 
-\subsubsection{Blur}
+\paragraph{Blur}
 
 \begin{figure}[h]
 \minipage{0.5\textwidth}
@@ -356,7 +356,7 @@ Si bien aparece en todos los algoritmos, en el de \textit{Vecinos} aparece en ma
 \end{figure}
 
 
-\subsubsection{Ringing}
+\paragraph{Ringing}
 
 \begin{figure}[h]
 \minipage{0.5\textwidth}
