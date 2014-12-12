@@ -29,14 +29,49 @@ Por esto es que desarrollamos una función muy simple que realiza esta transform
         \includegraphics[width=0.5\textwidth]{imagenes/img9_bayer.png}   
         Imagen original y bayerizada
 \end{figure}
-
+\newpage
 \subsection{Artifacts}
 
 Una forma que utilizaremos para medir la calidad subjetiva de los distintos algoritmos de demosaicing para las imágenes con las que experimentaremos es mediante la detección de \textbf{artifacts}. Los artifacts son defectos comunes que ocurren en el procesamiento de imágenes y que han sido categorizados para un mejor análisis, entre los cuales podemos encontrar y nos enfocaremos: Moiré, False Color, Zippering, Blur y Ringing/Edge. Por tal motivo vamos a definir y mostrar un ejemplo de cada uno:
 
-\textbf{Moiré}:
-\textbf{False Color}:
-\textbf{Zippering}:
-\textbf{Blur}:
-\textbf{Ringing/Edge}:
+\textbf{Moiré}:\\
+\\
+
+\begin{figure}[htb]
+\begin{center}
+       \includegraphics[width=0.4\textwidth]{imagenes/moire_original.jpg}
+          \hfill
+           \includegraphics[width=0.4\textwidth]{imagenes/moire_example.jpg}
+          
+       Ejemplo de imagen original vs artifact Moiré
+       \end{center}
+
+\end{figure}
+
+\textbf{False Color}:\\
+El artifact False Color ocurre cuando el algoritmo de demosaicing arroja como resultado una zona en la imagen de distinto color al original.
+\\
+\textbf{Zippering}:\\
+El artifact Zippering (cremallera) es un artifact que suele ocurrir en zonas de la imagen donde hay elementos borde, donde en la misma se genera un cambio abrupto en los valores, y consiste en que se produce un efecto de lineas que tienen mucha similitud a una cremallera en estos bordes
+\\
+\begin{figure}[htb]
+\begin{center}
+       \includegraphics[width=0.5\textwidth]{imagenes/zippering_example.jpeg}
+       \caption{Ejemplo de imagen original vs artifact Zippering}
+       \end{center}
+
+\end{figure}
+\textbf{Blur}:\\
+Como su nombre lo indica, el artifact Blur (borroneo) se observa cuando la imagen se ve más borrosa, con menos nitidez y definición que la original\\
+
+\begin{figure}[htb]
+\begin{center}
+       \includegraphics[width=0.5\textwidth]{imagenes/blur_example.jpg}
+       \caption{Ejemplo de imagen original vs artifact Blur}
+       \end{center}
+
+\end{figure}
+
+
+\textbf{Ringing/Edge}:\\
 
