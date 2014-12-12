@@ -165,91 +165,40 @@ $$
 Yendo más a fondo aún en la cuestión y para mostrar el nivel de detalle que obtiene cada algoritmo, decidimos hacer zoom en la zona donde la imagen posee texto:
 
 \begin{figure}
+\begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img9_demosicing_vecino_cropped.png}
         \caption{Vecinos}
+\end{center}
 \end{figure}
 
 \begin{figure}
+\begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img9_demosicing_bilineal_cropped.png}
         \caption{Bilineal}
+\end{center}
 \end{figure}
 
+
 \begin{figure}
+\begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img9_demosicing_spline_cropped.png}
         \caption{Direccional}
+\end{center}
 \end{figure}
 
+
 \begin{figure}
+\begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img9_demosicing_quality_cropped.png}
         \caption{Quality}
+\end{center}
 \end{figure}
+
 
 Acá si se puede observar la nitidez y suavidad que presenta cada algoritmo, viéndose como mejora la calidad del texto para cada imagen y como va disminuyendo el ruido aumentando la refinación alrededor del mismo.
 
 \newpage
 
-\subsubsection{Imagen 12}
-
-A continuación probaremos con una imagen provista por la cátedra para tener mas resultados sobre los cuales apoyarnos a la hora de sacar nuestras conclusiones. Obviaremos la imagen bayerizada ya que sólo
-nos interesaba ver que sea correcta la bayerización y con lo ya hecho eso queda claro.
-
-\begin{figure}[h]
-\begin{center}
-       \includegraphics[scale=0.3]{imagenes/img12.png}
-       \caption{Original }\label{fig:awesome_image1}
-        \end{center}
-
-\end{figure}
-
-\begin{figure}[!ht]
-\minipage{0.5\textwidth}
-\begin{center}
-    \includegraphics[scale=0.3]{imagenes/img12_demosicing_bilineal.png}
-    \caption{Bilineal }
- \end{center}
-\endminipage
-\minipage{0.5\textwidth}
-\begin{center}
-    \includegraphics[scale=0.3]{imagenes/img12_demosicing_quality.png}
-    \caption{High Quality}
-        \end{center}
-\endminipage\hfill
-\end{figure}
-
-\begin{figure}[h]
-\minipage{0.5\textwidth}
-\begin{center}
-    \includegraphics[scale=0.3]{imagenes/img12_demosicing_spline.png}
-    \caption{Directional}
-        \end{center}
-\endminipage
-\minipage{0.5\textwidth}
-\begin{center}
-    \includegraphics[scale=0.3]{imagenes/img12_demosicing_vecino.png}
-    \caption{Vecinos}
- \end{center}
-\endminipage
- 
-\end{figure}
-\newpage
-
-Subjetivamente highquality parece ser la mejor. Ya que se la ve bastante menos borrosa que las demás y con bordes mas nítidos, esto es facilmente apreciable en los dibujos que hay sobre la casa. A diferencia de vecinos que tiene bordes no sólo poco nítidos sino hasta claramente pixelados. Entre Directional y bilineal podemos notar que el primero, en los dibujos de la casa, es un poco más nitido que el segundo y parece tener un poco mas de calidad, también apreciable en los dibujos de la casa.
-
-Veamos ahora a través del calculo del PSNR contra la imagen original como es el ranking.
-
-$$ 
-\begin{bmatrix}
-           &      PSNR    \\
-       quality    &   32.33   \\
-       bilineal    &      30.27   \\
-       directional    &      29.87    \\
-       vecinos   &      25.45     \\
-\end{bmatrix} 
-$$
-
-Objetivamente el peor y el mejor se mantienen, debido a que quality es el de mayor PSNR y vecinos el de menor. En estos valores también es apreciable la gran diferencia de resultados observada anteriormente, mientras que subjetivamente se podía notar una nítida y la otra directamente pixelada objetivamente el PSNR es 10 puntos mas grande en la quality. Lo que si cambia acá es la relación entre directional y bilineal, mientras que objetivamente el bilineal parecía ser mejor subjetivamente podemos ver que esto es al revés (aunque también por poca diferencia).
-
-Como dato interesante vale aclarar que en el tejado de la casa podemos ver anomalías en todos los resultados, así como también en los arboles que están a la izquierda y por encima. Más adelante analizaremos bien porque es que sucede esto.
 
 \subsection{Experimentación comparativa}
 
@@ -265,7 +214,7 @@ A continuación el gráfico con la comparación de tiempos entre los 4 algoritmo
        \includegraphics[width=1\textwidth]{imagenes/tiempo_algoritmos_random.png}
 \end{figure}
 
-
+\newpage
 
 \begin{figure}[h]
        \includegraphics[width=1\textwidth]{imagenes/tiempo_algoritmos_plain.png}
@@ -300,11 +249,10 @@ mucho más probable que tengan un valor más próximo.
 \subsubsection{Calidad subjetiva}
 
 En las secciones anteriores analizamos la calidad de las imágenes basándonos en los valores de los pixeles que resultaban después de aplicar los distintos algoritmos de demosaicing y la comparamos con la original pero no teníamos en cuenta las diferencias entre estas a la vista del ojo humano. Por esto último en esta sección mediremos la calidad subjetiva de las imágenes en base a los \textbf{artifacts} que se pueden encontrar en cada una de ellas.\\
-Lo llamativo es que en mayor o menor intensidad los artifacts aparecen en los 4 algoritmos:
-
-\paragraph{Moiré / False color}
-Ocurre en los 4 algoritmos por igual
-\begin{figure}[h]
+A continuación los resultados a la experimentación con las distintas imágenes de prueba:
+\newpage
+\subsubsubsection{Moiré / False color}
+\begin{figure}[htb]
 \minipage{0.5\textwidth}
 \begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img8_moire_original.png}
@@ -314,15 +262,15 @@ Ocurre en los 4 algoritmos por igual
 \minipage{0.5\textwidth}
 \begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img8_moire.png}
-        \caption{}
+        \caption{Demosaicing}
          \end{center}
 \endminipage
+
 \end{figure}
-\paragraph{Zippering}
 
-Si bien aparece en todos los algoritmos, en el de \textit{Vecinos} aparece en mayor intensidad y siendo muy notorio.
+\subsubsubsection{Zippering}
 
-\begin{figure}[h]
+\begin{figure}[hb]
 \minipage{0.5\textwidth}
 \begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img5_zippering_original.png}
@@ -332,13 +280,13 @@ Si bien aparece en todos los algoritmos, en el de \textit{Vecinos} aparece en ma
 \minipage{0.5\textwidth}
 \begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img5_zippering.png}
-        \caption{}
+        \caption{Demosaicing}
          \end{center}
 \endminipage
 \end{figure}
+\newpage
 
-
-\paragraph{Blur}
+\subsubsubsection{Blur}
 
 \begin{figure}[h]
 \minipage{0.5\textwidth}
@@ -350,13 +298,13 @@ Si bien aparece en todos los algoritmos, en el de \textit{Vecinos} aparece en ma
 \minipage{0.5\textwidth}
 \begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img3_blur.png}
-        \caption{}
+        \caption{Demosaicing}
          \end{center}
 \endminipage
 \end{figure}
 
 
-\paragraph{Ringing}
+\subsubsubsection{Ringing}
 
 \begin{figure}[h]
 \minipage{0.5\textwidth}
@@ -368,9 +316,11 @@ Si bien aparece en todos los algoritmos, en el de \textit{Vecinos} aparece en ma
 \minipage{0.5\textwidth}
 \begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/img5_ringing.png}
-        \caption{}
+        \caption{Demosaicing}
          \end{center}
 \endminipage
 \end{figure}
+
+Lo llamativo es que en mayor o menor intensidad los artifacts aparecen en los 4 algoritmos, aunque no quiere decir que esto siempre sea asi ya que vimos en la sección de experimentación individual un caso en que no ocurría. Por lo tanto, como esta comparación es subjetiva, basandonos en nuestro $``ojo\ humano"$, el algoritmo en donde los artifacts se aprecian con menor intensidad es en HighQuality, seguido por Spline, Bilineal y Vecinos. Esto era de esperarse ya que los algoritmos de HighQuality y Spline primero aproximan la imagen con el algoritmo Bilineal y luego la mejoran. Y también el resultado de Vecinos fue el esperable ya que es un algoritmo bastante básico.
 
 
