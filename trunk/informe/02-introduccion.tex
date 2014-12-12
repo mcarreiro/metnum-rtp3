@@ -34,8 +34,8 @@ Por esto es que desarrollamos una función muy simple que realiza esta transform
 
 Una forma que utilizaremos para medir la calidad subjetiva de los distintos algoritmos de demosaicing para las imágenes con las que experimentaremos es mediante la detección de \textbf{artifacts}. Los artifacts son defectos comunes que ocurren en el procesamiento de imágenes y que han sido categorizados para un mejor análisis, entre los cuales podemos encontrar y nos enfocaremos: Moiré, False Color, Zippering, Blur y Ringing/Edge. Por tal motivo vamos a definir y mostrar un ejemplo de cada uno:
 
-\textbf{Moiré}:\\
-El artifact Moiré ocurre en zonas de la imagen en donde hay lineas muy cercanas y que producto de los algoritmos de demosaicing se producen superposiciones de las mismas, dando como resultado en la mayoría de los casos un nuevo patrón sobre ellas\\
+\paragraph{Moiré:}
+El artifact Moiré ocurre en zonas de la imagen en donde hay lineas muy cercanas y que producto de los algoritmos de demosaicing se producen superposiciones de las mismas, dando como resultado en la mayoría de los casos un nuevo patrón sobre ellas
 
 \begin{figure}[htb]
 \begin{center}
@@ -48,12 +48,12 @@ El artifact Moiré ocurre en zonas de la imagen en donde hay lineas muy cercanas
 
 \end{figure}
 
-\textbf{False Color}:\\
+\paragraph{False Color:}
 El artifact False Color ocurre cuando el algoritmo de demosaicing arroja como resultado una zona en la imagen de distinto color al original. Suele venir acompañado cuando ocurre Moiré
-\\
-\textbf{Zippering}:\\
+
+\paragraph{Zippering:}
 El artifact Zippering (cremallera) es un artifact que suele ocurrir en zonas de la imagen donde hay elementos borde, donde en la misma se genera un cambio abrupto en los valores, y consiste en que se produce un efecto de lineas que tienen mucha similitud a una cremallera en estos bordes
-\\
+
 \begin{figure}[htb]
 \begin{center}
        \includegraphics[width=0.5\textwidth]{imagenes/zippering_example.jpeg}
@@ -61,8 +61,8 @@ El artifact Zippering (cremallera) es un artifact que suele ocurrir en zonas de 
        \end{center}
 
 \end{figure}
-\textbf{Blur}:\\
-Como su nombre lo indica, el artifact Blur (borroneo) se observa cuando la imagen se ve más borrosa, con menos nitidez y definición que la original\\
+\paragraph{Blur:}
+Como su nombre lo indica, el artifact Blur (borroneo) se observa cuando la imagen se ve más borrosa, con menos nitidez y definición que la original
 
 \begin{figure}[htb]
 \begin{center}
@@ -73,5 +73,14 @@ Como su nombre lo indica, el artifact Blur (borroneo) se observa cuando la image
 \end{figure}
 
 
-\textbf{Ringing/Edge}:\\
+\paragraph{Ringing:}
+El artifact Ringing aparece con frecuencia en zonas de borde  produciendo que los mismos pierdan suavidad (los bordes sufren un pixelamiento) y aparezca un \textit{borde fantasma}, que consiste en un borde alrededor como si fuese una sombra del mismo borde.
+
+\begin{figure}[htb]
+\begin{center}
+       \includegraphics[width=0.5\textwidth]{imagenes/ringing_example.jpg}
+       \caption{Ejemplo de artifact Ringing en borde recto y redondeado}
+       \end{center}
+
+\end{figure}
 
