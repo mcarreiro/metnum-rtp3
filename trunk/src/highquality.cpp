@@ -24,7 +24,7 @@ public:
             for(int j=2; j< height-2; j++) {
                 //i COLUMNA
                 //j FILA
-                correccion = correccionRojo = correccionVerde = correccionAzul =  0;
+                correccion = 0;
                 if (i %2 == 0 && j % 2 == 0){ //ACA HAY AZUL
                     correccion += imagen[i][j-2].azul/8.0;
                     correccion += imagen[i-2][j].azul/8.0;
